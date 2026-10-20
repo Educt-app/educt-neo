@@ -396,3 +396,28 @@ export const password = {
     unmet: { iconBorder: 'dashed', color: surface.mutedForeground },
   },
 } as const;
+
+// ── Essay correction (ENEM) ────────────────────────────────────
+
+/**
+ * "Corrigindo" card: zero-grade checks, then one competency at a time,
+ * then the grade. Same order and colors as the grade screen.
+ */
+export const correction = {
+  bar: { running: accent.yellow, done: accent.mint },
+  progress: { fill: primary[400], height: 10 },
+  /** Eliminatory checks shown as chips, one at a time */
+  zeroChecks: ['Fuga ao tema', 'Tipo textual', 'Mais de 7 linhas', 'Cópia dos textos motivadores'],
+  step: {
+    waiting: { borderStyle: 'dashed', color: surface.mutedForeground },
+    current: { background: accent.yellow, fontWeight: fontWeight.semibold },
+    /** Done marker takes the competency color (criteria[1..5]); zero check is mint */
+    done: { background: criteria, zeroCheck: accent.mint },
+  },
+  /** Stamp sticker when done: scales from 2.4× and lands at −7° */
+  stamp: { background: accent.mint, rotate: -7, duration: 420, easing: 'cubic-bezier(0.2, 1.4, 0.4, 1)' },
+  /** Total grade counts up with ease-out */
+  countUp: { duration: 900 },
+  /** Score pops in when a competency finishes */
+  scorePop: { duration: 320, easing: 'cubic-bezier(0.2, 1.6, 0.4, 1)' },
+} as const;

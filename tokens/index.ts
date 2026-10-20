@@ -82,4 +82,5 @@ export {
   select,
   upload,
   password,
+  correction,
 } from './components';

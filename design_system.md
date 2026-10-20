@@ -171,7 +171,12 @@ Os tokens ficam em [`tokens/components.ts`](tokens/components.ts), e os exemplos
 - **Até 1s:** nada.
 - **Espera curta:** o loader da marca, três quadrados azul, violeta e coral pulando.
 - **Lista ou cartão:** skeleton com a forma do conteúdo, num contêiner tracejado.
-- **Tarefa longa:** etapas. A concluída fica verde com check, a atual amarela e a próxima tracejada. Mostre o tempo estimado quando houver.
+- **Correção ENEM (`correction`):** cartão "Corrigindo · 1 min", com barra amarela e barra de progresso violeta.
+  1. A checagem de nota zero vem primeiro: fuga ao tema, tipo textual, mais de 7 linhas e cópia dos textos motivadores, marcadas uma a uma. Se uma falhar, a correção para e mostra o motivo.
+  2. Depois, uma competência por vez. A atual fica amarela; ao terminar, o quadrado ganha a cor da competência e a nota de 0 a 200 aparece com um pulo.
+  3. No fim, a barra fica verde e o título vira "Corrigida". A nota total conta até o valor final, o adesivo "Corrigida!" carimba o cartão e os quadrados pulam em sequência.
+  4. Com movimento reduzido, o estado muda sem animação.
+- **Outra tarefa longa:** etapas. A concluída fica verde com check, a atual amarela e a próxima tracejada. Mostre o tempo estimado quando houver.
 
 ### Seleção (`checkbox`, `radio`, `toggle`)
 
