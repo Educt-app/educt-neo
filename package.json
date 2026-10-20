@@ -1,0 +1,16 @@
+{
+  "name": "@educt/neo",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Educt Neo: tokens neo-brutalistas da Educt (sucessor do ds-tokens)",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist", "tokens", "css"],
+  "scripts": {
+    "build": "tsc && node scripts/build-css.mjs",
+    "check": "tsc && node scripts/check.mjs"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

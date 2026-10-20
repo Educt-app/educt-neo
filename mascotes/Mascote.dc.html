@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Mascote</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+body{margin:0}
+</style>
+</helmet>
+<div style="width: {{w}}px; height: {{h}}px">
+<sc-if value="{{isGrafite}}" hint-placeholder-val="{{true}}">
+<svg viewBox="{{vb}}" width="100%" height="100%" preserveAspectRatio="{{par}}" role="img" aria-label="{{label}}" class="{{cls}}" style="display: block; overflow: {{ov}}">
+<g transform="translate({{sh}} {{sh}})" display="{{shDisp}}" fill="#1A1C27">
+<path d="M -40 30 V 10 Q -40 4 -34 3.6 L 33 -0.6 Q 40 -1 40 6 V 30 Z"></path>
+<rect x="-47" y="28" width="94" height="236"></rect>
+<path d="M -46 264 L 46 264 L 12 318 L 2.4 337 Q 0 340.5 -2.4 337 L -12 318 Z"></path>
+</g>
+<path d="{{arm.bl}}" fill="none" stroke="#1A1C27" stroke-width="{{aw}}" stroke-linecap="round"></path>
+<path d="{{arm.br}}" fill="none" stroke="#1A1C27" stroke-width="{{aw}}" stroke-linecap="round"></path>
+<g stroke="#1A1C27" stroke-width="{{sw}}" stroke-linejoin="round" stroke-linecap="round">
+<path d="M -40 30 V 10 Q -40 4 -34 3.6 L 33 -0.6 Q 40 -1 40 6 V 30 Z" fill="#FF6B57"></path>
+<rect x="-46" y="52" width="92" height="212" fill="#FFE066" stroke="none"></rect>
+<path d="M -46 52 H -32 V 264 H -46 Z M 32 52 H 46 V 264 H 32 Z" fill="#FFB930" stroke="none"></path>
+<path d="M -32 54 V 264 M 32 54 V 264" fill="none" stroke-width="{{sw2}}"></path>
+<rect x="-46" y="52" width="92" height="212" fill="none"></rect>
+<path d="M -46 264 Q -39 250 -32 264 Q 0 238 32 264 Q 39 250 46 264 L 12 318 L -12 318 Z" fill="#F2B48C"></path>
+<path d="M -21 282 L -13 300 M 17 279 L 11 293" fill="none" stroke-width="{{sw2}}"></path>
+<path d="M -12 318 L 12 318 L 2.4 337 Q 0 340.5 -2.4 337 Z" fill="#1A1C27"></path>
+<rect x="-47" y="28" width="94" height="26" rx="2" fill="#D6DAE6"></rect>
+<path d="M -47 35 H 47 M -47 47 H 47 M -26 38.5 V 43.5 M 0 38.5 V 43.5 M 26 38.5 V 43.5" fill="none" stroke-width="{{sw2}}"></path>
+</g>
+<path d="{{bL}}" fill="none" stroke="#1A1C27" stroke-width="{{bw}}" stroke-linecap="round"></path>
+<path d="{{bR}}" fill="none" stroke="#1A1C27" stroke-width="{{bw}}" stroke-linecap="round"></path>
+<g class="m-piscar">
+<g display="{{eL.open}}">
+<ellipse cx="{{eL.cx}}" cy="{{eL.cy}}" rx="{{eL.rx}}" ry="{{eL.ry}}" fill="#FFFFFF"></ellipse>
+<ellipse cx="{{eL.px}}" cy="{{eL.py}}" rx="{{eL.pr}}" ry="{{eL.pr}}" fill="#1A1C27"></ellipse>
+<ellipse cx="{{eL.hx}}" cy="{{eL.hy}}" rx="{{eL.hrx}}" ry="{{eL.hry}}" fill="#FFFFFF"></ellipse>
+<path d="{{eL.lid}}" fill="{{lidc}}"></path>
+<path d="{{eL.lidLine}}" fill="none" stroke="#1A1C27" stroke-width="{{sw}}" stroke-linecap="round"></path>
+<ellipse cx="{{eL.cx}}" cy="{{eL.cy}}" rx="{{eL.rx}}" ry="{{eL.ry}}" fill="none" stroke="#1A1C27" stroke-width="{{sw}}"></ellipse>
+</g>
+<g display="{{eR.open}}">
+<ellipse cx="{{eR.cx}}" cy="{{eR.cy}}" rx="{{eR.rx}}" ry="{{eR.ry}}" fill="#FFFFFF"></ellipse>
+<ellipse cx="{{eR.px}}" cy="{{eR.py}}" rx="{{eR.pr}}" ry="{{eR.pr}}" fill="#1A1C27"></ellipse>
+<ellipse cx="{{eR.hx}}" cy="{{eR.hy}}" rx="{{eR.hrx}}" ry="{{eR.hry}}" fill="#FFFFFF"></ellipse>
+<path d="{{eR.lid}}" fill="{{lidc}}"></path>
+<path d="{{eR.lidLine}}" fill="none" stroke="#1A1C27" stroke-width="{{sw}}" stroke-linecap="round"></path>
+<ellipse cx="{{eR.cx}}" cy="{{eR.cy}}" rx="{{eR.rx}}" ry="{{eR.ry}}" fill="none" stroke="#1A1C27" stroke-width="{{sw}}"></ellipse>
+</g>
+</g>
+<path d="{{eL.closed}}" fill="none" stroke="#1A1C27" stroke-width="{{swc}}" stroke-linecap="round"></path>
+<path d="{{eR.closed}}" fill="none" stroke="#1A1C27" stroke-width="{{swc}}" stroke-linecap="round"></path>
+<path d="{{m.fill}}" fill="#1A1C27"></path>
+<path d="{{m.tongue}}" fill="#FF6B57"></path>
+<path d="{{m.fill}}" fill="none" stroke="#1A1C27" stroke-width="{{sw}}" stroke-linejoin="round"></path>
+<path d="{{m.tout}}" fill="#FF6B57" stroke="#1A1C27" stroke-width="{{swt}}" stroke-linejoin="round"></path>
+<path d="{{m.tline}}" fill="none" stroke="#1A1C27" stroke-width="{{swt}}" stroke-linecap="round"></path>
+<path d="{{m.line}}" fill="none" stroke="#1A1C27" stroke-width="{{swm}}" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="{{fx.lines}}" display="{{fx.linesDisp}}" fill="none" stroke="#1A1C27" stroke-width="{{sw}}" stroke-linecap="round"></path>
+<path d="{{fx.wave}}" display="{{fx.waveDisp}}" fill="none" stroke="#1A1C27" stroke-width="{{sw2}}" stroke-linecap="round"></path>
+<g display="{{sheet.disp}}" transform="{{sheet.t}}">
+<rect x="-32" y="0" width="64" height="76" rx="3" fill="#FFFFFF" stroke="#1A1C27" stroke-width="{{sw}}"></rect>
+<path d="M -22 15 H 22 M -22 26 H 22 M -22 37 H 22 M -22 48 H 8" fill="none" stroke="#1A1C27" stroke-width="{{sw2}}" stroke-linecap="round"></path>
+<path d="M 9 56 L 15 63 L 26 48" fill="none" stroke="#FF6B57" stroke-width="{{aw}}" stroke-linecap="round" stroke-linejoin="round"></path>
+</g>
+<path d="{{arm.fl}}" fill="none" stroke="#1A1C27" stroke-width="{{aw}}" stroke-linecap="round"></path>
+<path d="{{arm.fr}}" fill="none" stroke="#1A1C27" stroke-width="{{aw}}" stroke-linecap="round"></path>
+<g transform="{{hL.t}}" display="{{hL.disp}}">
+<path d="{{hL.f}}" fill="none" stroke="#1A1C27" stroke-width="{{hw.fo}}" stroke-linecap="round"></path>
+<path d="{{hL.tu}}" fill="none" stroke="#1A1C27" stroke-width="{{hw.to}}" stroke-linecap="round"></path>
+<path d="{{hL.p}}" fill="#1A1C27" stroke="#1A1C27" stroke-width="{{hw.po}}" stroke-linejoin="round"></path>
+<path d="{{hL.f}}" fill="none" stroke="#FFFFFF" stroke-width="{{hw.fi}}" stroke-linecap="round"></path>
+<path d="{{hL.tu}}" fill="none" stroke="#FFFFFF" stroke-width="{{hw.ti}}" stroke-linecap="round"></path>
+<path d="{{hL.p}}" fill="#FFFFFF"></path>
+<path d="{{hL.d}}" fill="none" stroke="#1A1C27" stroke-width="{{hw.dw}}" stroke-linecap="round"></path>
+<path d="{{hL.to}}" fill="none" stroke="#1A1C27" stroke-width="{{hw.to}}" stroke-linecap="round"></path>
+<path d="{{hL.to}}" fill="none" stroke="#FFFFFF" stroke-width="{{hw.ti}}" stroke-linecap="round"></path>
+<path d="{{cuff}}" fill="#FFFFFF" stroke="#1A1C27" stroke-width="{{hw.cw}}" stroke-linejoin="round"></path>
+<path d="{{cuffl}}" fill="none" stroke="#1A1C27" stroke-width="{{hw.dw}}"></path>
+</g>
+<g transform="{{hR.t}}" display="{{hR.disp}}">
+<path d="{{hR.f}}" fill="none" stroke="#1A1C27" stroke-width="{{hw.fo}}" stroke-linecap="round"></path>
+<path d="{{hR.tu}}" fill="none" stroke="#1A1C27" stroke-width="{{hw.to}}" stroke-linecap="round"></path>
+<path d="{{hR.p}}" fill="#1A1C27" stroke="#1A1C27" stroke-width="{{hw.po}}" stroke-linejoin="round"></path>
+<path d="{{hR.f}}" fill="none" stroke="#FFFFFF" stroke-width="{{hw.fi}}" stroke-linecap="round"></path>
+<path d="{{hR.tu}}" fill="none" stroke="#FFFFFF" stroke-width="{{hw.ti}}" stroke-linecap="round"></path>
+<path d="{{hR.p}}" fill="#FFFFFF"></path>
+<path d="{{hR.d}}" fill="none" stroke="#1A1C27" stroke-width="{{hw.dw}}" stroke-linecap="round"></path>
+<path d="{{hR.to}}" fill="none" stroke="#1A1C27" stroke-width="{{hw.to}}" stroke-linecap="round"></path>
+<path d="{{hR.to}}" fill="none" stroke="#FFFFFF" stroke-width="{{hw.ti}}" stroke-linecap="round"></path>
+<path d="{{cuff}}" fill="#FFFFFF" stroke="#1A1C27" stroke-width="{{hw.cw}}" stroke-linejoin="round"></path>
+<path d="{{cuffl}}" fill="none" stroke="#1A1C27" stroke-width="{{hw.dw}}"></path>
+</g>
+</svg>
+</sc-if>
+<sc-if value="{{isTinta}}" hint-placeholder-val="{{false}}">
+<svg viewBox="{{vb}}" width="100%" height="100%" preserveAspectRatio="{{par}}" role="img" aria-label="{{label}}" class="{{cls}}" style="display: block; overflow: {{ov}}">
+<g transform="translate({{sh}} {{sh}})" display="{{shDisp}}" fill="#1A1C27">
+<path d="M -35 60 V 18 Q -35 4 -21 4 H 21 Q 35 4 35 18 V 60 Z"></path>
+<path d="M 20 9 H 41 Q 47 9 47 16 V 102 Q 47 110 41.5 110 Q 36 110 36 102 V 22 H 20 Z"></path>
+<path d="M -32 58 H 32 V 300 L 8 344 L 3.2 355 L 0 360.2 L -3.2 355 L -8 344 L -32 300 Z"></path>
+</g>
+<path d="{{arm.bl}}" fill="none" stroke="#1A1C27" stroke-width="{{aw}}" stroke-linecap="round"></path>
+<path d="{{arm.br}}" fill="none" stroke="#1A1C27" stroke-width="{{aw}}" stroke-linecap="round"></path>
+<g stroke="#1A1C27" stroke-width="{{sw}}" stroke-linejoin="round" stroke-linecap="round">
+<rect x="-32" y="58" width="64" height="242" fill="#5B8DF5"></rect>
+<path d="M -32 300 L -8 344 L 8 344 L 32 300 Z" fill="#D4E1FD"></path>
+<path d="M -6.5 344 L -3.2 355 L 3.2 355 L 6.5 344 Z" fill="#D6DAE6"></path>
+<circle cx="0" cy="357.4" r="2.8" fill="#1A1C27"></circle>
+<path d="M -35 60 V 18 Q -35 4 -21 4 H 21 Q 35 4 35 18 V 60 Z" fill="#2248A6"></path>
+<rect x="-36" y="50" width="72" height="12" rx="3" fill="#D6DAE6"></rect>
+<path d="M 20 9 H 41 Q 47 9 47 16 V 102 Q 47 110 41.5 110 Q 36 110 36 102 V 22 H 20 Z" fill="#D6DAE6"></path>
+</g>
+<path d="{{bL}}" fill="none" stroke="#1A1C27" stroke-width="{{bw}}" stroke-linecap="round"></path>
+<path d="{{bR}}" fill="none" stroke="#1A1C27" stroke-width="{{bw}}" stroke-linecap="round"></path>
+<g class="m-piscar">
+<g display="{{eL.open}}">
+<ellipse cx="{{eL.cx}}" cy="{{eL.cy}}" rx="{{eL.rx}}" ry="{{eL.ry}}" fill="#FFFFFF"></ellipse>
+<ellipse cx="{{eL.px}}" cy="{{eL.py}}" rx="{{eL.pr}}" ry="{{eL.pr}}" fill="#1A1C27"></ellipse>
+<ellipse cx="{{eL.hx}}" cy="{{eL.hy}}" rx="{{eL.hrx}}" ry="{{eL.hry}}" fill="#FFFFFF"></ellipse>
+<path d="{{eL.lid}}" fill="{{lidc}}"></path>
+<path d="{{eL.lidLine}}" fill="none" stroke="#1A1C27" stroke-width="{{sw}}" stroke-linecap="round"></path>
+<ellipse cx="{{eL.cx}}" cy="{{eL.cy}}" rx="{{eL.rx}}" ry="{{eL.ry}}" fill="none" stroke="#1A1C27" stroke-width="{{sw}}"></ellipse>
+</g>
+<g display="{{eR.open}}">
+<ellipse cx="{{eR.cx}}" cy="{{eR.cy}}" rx="{{eR.rx}}" ry="{{eR.ry}}" fill="#FFFFFF"></ellipse>
+<ellipse cx="{{eR.px}}" cy="{{eR.py}}" rx="{{eR.pr}}" ry="{{eR.pr}}" fill="#1A1C27"></ellipse>
+<ellipse cx="{{eR.hx}}" cy="{{eR.hy}}" rx="{{eR.hrx}}" ry="{{eR.hry}}" fill="#FFFFFF"></ellipse>
+<path d="{{eR.lid}}" fill="{{lidc}}"></path>
+<path d="{{eR.lidLine}}" fill="none" stroke="#1A1C27" stroke-width="{{sw}}" stroke-linecap="round"></path>
+<ellipse cx="{{eR.cx}}" cy="{{eR.cy}}" rx="{{eR.rx}}" ry="{{eR.ry}}" fill="none" stroke="#1A1C27" stroke-width="{{sw}}"></ellipse>
+</g>
+</g>
+<path d="{{eL.closed}}" fill="none" stroke="#1A1C27" stroke-width="{{swc}}" stroke-linecap="round"></path>
+<path d="{{eR.closed}}" fill="none" stroke="#1A1C27" stroke-width="{{swc}}" stroke-linecap="round"></path>
+<path d="{{m.fill}}" fill="#1A1C27"></path>
+<path d="{{m.tongue}}" fill="#FF6B57"></path>
+<path d="{{m.fill}}" fill="none" stroke="#1A1C27" stroke-width="{{sw}}" stroke-linejoin="round"></path>
+<path d="{{m.tout}}" fill="#FF6B57" stroke="#1A1C27" stroke-width="{{swt}}" stroke-linejoin="round"></path>
+<path d="{{m.tline}}" fill="none" stroke="#1A1C27" stroke-width="{{swt}}" stroke-linecap="round"></path>
+<path d="{{m.line}}" fill="none" stroke="#1A1C27" stroke-width="{{swm}}" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="{{fx.lines}}" display="{{fx.linesDisp}}" fill="none" stroke="#1A1C27" stroke-width="{{sw}}" stroke-linecap="round"></path>
+<path d="{{fx.wave}}" display="{{fx.waveDisp}}" fill="none" stroke="#1A1C27" stroke-width="{{sw2}}" stroke-linecap="round"></path>
+<g display="{{sheet.disp}}" transform="{{sheet.t}}">
+<rect x="-32" y="0" width="64" height="76" rx="3" fill="#FFFFFF" stroke="#1A1C27" stroke-width="{{sw}}"></rect>
+<path d="M -22 15 H 22 M -22 26 H 22 M -22 37 H 22 M -22 48 H 8" fill="none" stroke="#1A1C27" stroke-width="{{sw2}}" stroke-linecap="round"></path>
+<path d="M 9 56 L 15 63 L 26 48" fill="none" stroke="#FF6B57" stroke-width="{{aw}}" stroke-linecap="round" stroke-linejoin="round"></path>
+</g>
+<path d="{{arm.fl}}" fill="none" stroke="#1A1C27" stroke-width="{{aw}}" stroke-linecap="round"></path>
+<path d="{{arm.fr}}" fill="none" stroke="#1A1C27" stroke-width="{{aw}}" stroke-linecap="round"></path>
+<g transform="{{hL.t}}" display="{{hL.disp}}">
+<path d="{{hL.f}}" fill="none" stroke="#1A1C27" stroke-width="{{hw.fo}}" stroke-linecap="round"></path>
+<path d="{{hL.tu}}" fill="none" stroke="#1A1C27" stroke-width="{{hw.to}}" stroke-linecap="round"></path>
+<path d="{{hL.p}}" fill="#1A1C27" stroke="#1A1C27" stroke-width="{{hw.po}}" stroke-linejoin="round"></path>
+<path d="{{hL.f}}" fill="none" stroke="#FFFFFF" stroke-width="{{hw.fi}}" stroke-linecap="round"></path>
+<path d="{{hL.tu}}" fill="none" stroke="#FFFFFF" stroke-width="{{hw.ti}}" stroke-linecap="round"></path>
+<path d="{{hL.p}}" fill="#FFFFFF"></path>
+<path d="{{hL.d}}" fill="none" stroke="#1A1C27" stroke-width="{{hw.dw}}" stroke-linecap="round"></path>
+<path d="{{hL.to}}" fill="none" stroke="#1A1C27" stroke-width="{{hw.to}}" stroke-linecap="round"></path>
+<path d="{{hL.to}}" fill="none" stroke="#FFFFFF" stroke-width="{{hw.ti}}" stroke-linecap="round"></path>
+<path d="{{cuff}}" fill="#FFFFFF" stroke="#1A1C27" stroke-width="{{hw.cw}}" stroke-linejoin="round"></path>
+<path d="{{cuffl}}" fill="none" stroke="#1A1C27" stroke-width="{{hw.dw}}"></path>
+</g>
+<g transform="{{hR.t}}" display="{{hR.disp}}">
+<path d="{{hR.f}}" fill="none" stroke="#1A1C27" stroke-width="{{hw.fo}}" stroke-linecap="round"></path>
+<path d="{{hR.tu}}" fill="none" stroke="#1A1C27" stroke-width="{{hw.to}}" stroke-linecap="round"></path>
+<path d="{{hR.p}}" fill="#1A1C27" stroke="#1A1C27" stroke-width="{{hw.po}}" stroke-linejoin="round"></path>
+<path d="{{hR.f}}" fill="none" stroke="#FFFFFF" stroke-width="{{hw.fi}}" stroke-linecap="round"></path>
+<path d="{{hR.tu}}" fill="none" stroke="#FFFFFF" stroke-width="{{hw.ti}}" stroke-linecap="round"></path>
+<path d="{{hR.p}}" fill="#FFFFFF"></path>
+<path d="{{hR.d}}" fill="none" stroke="#1A1C27" stroke-width="{{hw.dw}}" stroke-linecap="round"></path>
+<path d="{{hR.to}}" fill="none" stroke="#1A1C27" stroke-width="{{hw.to}}" stroke-linecap="round"></path>
+<path d="{{hR.to}}" fill="none" stroke="#FFFFFF" stroke-width="{{hw.ti}}" stroke-linecap="round"></path>
+<path d="{{cuff}}" fill="#FFFFFF" stroke="#1A1C27" stroke-width="{{hw.cw}}" stroke-linejoin="round"></path>
+<path d="{{cuffl}}" fill="none" stroke="#1A1C27" stroke-width="{{hw.dw}}"></path>
+</g>
+</svg>
+</sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"personagem":{"editor":"enum","options":["grafite","tinta"],"default":"grafite"},"humor":{"editor":"enum","options":["neutro","feliz","animado","confiante","pensando","surpreso","tedio","triste","zoeira","determinado"],"default":"neutro"},"pose":{"editor":"enum","options":["nenhuma","relaxado","aceno","comemora","aponta","joinha","pensa","cintura","segura"],"default":"nenhuma"},"corte":{"editor":"enum","options":["inteiro","rosto"],"default":"inteiro"},"pupila":{"editor":"enum","options":["lisa","corte"],"default":"lisa"},"sombra":{"editor":"boolean","default":true},"largura":{"editor":"int","min":24,"max":1600,"default":260},"altura":{"editor":"int","min":24,"max":1600,"default":420},"olharx":{"editor":null},"olhary":{"editor":null},"recorte":{"editor":null},"$preview":{"width":260,"height":420}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props || {};
+    const r = (v) => Math.round(v * 100) / 100;
+    const pt = (x, y) => r(x) + ' ' + r(y);
+    const who = p.personagem === 'tinta' ? 'tinta' : 'grafite';
+    const CH = {
+      grafite: {
+        nome: 'Grafite, o lápis', lidc: '#FFE066', ground: 340, corner: [40, 0], cdx: 0,
+        eye: { y: 101, dx: 16, rx: 13, ry: 15.5 }, brow: { y: 76, li: 10, lo: 13 }, mouth: { x: 0, y: 136, k: 1 },
+        sh: { x: 46, y: 176 }, hs: 1.45, aw: 7.5, head: 40, face: [-56, 0, 112, 156],
+        neutro: { look: [0.05, 0.1], mouth: 'sorriso' }
+      },
+      tinta: {
+        nome: 'Tinta, a caneta', lidc: '#5B8DF5', ground: 360, corner: [35, 4], cdx: 12,
+        eye: { y: 102, dx: 14, rx: 12.5, ry: 14.5 }, brow: { y: 78, li: 9.5, lo: 12 }, mouth: { x: 0, y: 136, k: 0.95 },
+        sh: { x: 32, y: 178 }, hs: 1.3, aw: 6.8, head: 40, face: [-48, 34, 96, 123],
+        neutro: { look: [0.3, 0.1], lid: [-0.4, -0.4], brows: [1.5, 0], mouth: 'sorrisinho' }
+      }
+    };
+    const c = CH[who];
+    const HUM = {
+      neutro: c.neutro,
+      feliz: { look: [0, -0.1], brows: [-4, -2], mouth: 'aberta' },
+      animado: { look: [0, -0.15], pupil: 0.85, brows: [-8, -6], mouth: 'grito', lines: true },
+      confiante: { look: [0.35, 0.1], lid: [-0.12, -0.12], browsL: [1, 1], browsR: [-6, -9], mouth: 'sorrisinho' },
+      pensando: { look: [-0.6, -0.7], browsL: [-6, -3], browsR: [2, 2], mouth: 'reta', mdx: -4 },
+      surpreso: { look: [0, 0], pupil: 0.7, brows: [-10, -9], mouth: 'o' },
+      tedio: { look: [0.85, 0.25], lid: [0.15, 0.15], brows: [4, 4], mouth: 'reta' },
+      triste: { look: [0, 0.5], lid: [-0.9, -0.25], brows: [-7, 3], mouth: 'triste' },
+      zoeira: { eyes: 'wink', look: [0.1, 0], browsL: [-4, -2], browsR: [3, 4], mouth: 'lingua' },
+      determinado: { look: [0, 0.1], lid: [-0.25, -0.7], brows: [5, -4], mouth: 'reta' }
+    };
+    const humor = HUM[p.humor] ? p.humor : 'neutro';
+    const h = HUM[humor];
+    const POSES = ['nenhuma', 'relaxado', 'aceno', 'comemora', 'aponta', 'joinha', 'pensa', 'cintura', 'segura'];
+    const pose = POSES.indexOf(p.pose) >= 0 ? p.pose : 'nenhuma';
+    const corte = p.corte === 'rosto' ? 'rosto' : 'inteiro';
+    const W = Math.max(16, +p.largura || 260), H = Math.max(16, +p.altura || 420);
+    const off = (v) => v === false || v === 'false' || v === 'nao' || v === '0';
+    const num = (v) => (v === undefined || v === null || v === '' || isNaN(+v)) ? null : +v;
+
+    let vb;
+    if (corte === 'rosto') {
+      const rc = typeof p.recorte === 'string' ? p.recorte.trim().split(/[\s,]+/).map(Number) : null;
+      vb = rc && rc.length === 4 && rc.every((v) => !isNaN(v)) ? rc : c.face;
+    } else {
+      const vw = pose === 'nenhuma' ? 132 : 256;
+      vb = [-vw / 2, c.ground - 392, vw, 404];
+    }
+    const scale = corte === 'rosto' ? Math.max(W / vb[2], H / vb[3]) : Math.min(W / vb[2], H / vb[3]);
+    const charPx = scale * 300;
+    const swPx = Math.min(6, Math.max(1.5, charPx * 0.016));
+    const sw = swPx / scale;
+    const shPx = Math.min(10, Math.max(2.5, charPx * 0.024));
+
+    let look = h.look || [0, 0];
+    if (num(p.olharx) !== null && num(p.olhary) !== null) look = [num(p.olharx), num(p.olhary)];
+    let lx = look[0], ly = look[1];
+    const lm = Math.hypot(lx, ly);
+    if (lm > 1) { lx /= lm; ly /= lm; }
+
+    const E = c.eye;
+    const pupS = h.pupil || 1;
+    const eye = (cx, side, mode) => {
+      const rx = E.rx, ry = E.ry, cy = E.y;
+      const o = { cx: r(cx), cy: r(cy), rx: rx, ry: ry, open: mode === 'open' ? 'inline' : 'none', closed: 'M0 0', lid: 'M0 0', lidLine: 'M0 0' };
+      const pr = rx * 0.45 * pupS;
+      const px = cx + lx * (rx - pr - 1.6), py = cy + ly * (ry - pr - 1.6);
+      o.px = r(px); o.py = r(py); o.pr = r(pr);
+      if (p.pupila === 'corte') { o.hx = r(px + pr * 0.62); o.hy = r(py - pr * 0.25); o.hrx = r(pr * 0.5); o.hry = r(pr * 0.2); }
+      else { o.hx = 0; o.hy = 0; o.hrx = 0; o.hry = 0; }
+      if (mode === 'wink') o.closed = 'M ' + pt(cx - rx * 0.85, cy + 1) + ' L ' + pt(cx + rx * 0.85, cy + 1);
+      if (mode === 'open' && h.lid) {
+        const yi = h.lid[0] * ry, yo = h.lid[1] * ry;
+        const xi = cx - side * rx, xo = cx + side * rx;
+        const b = (yo - yi) / (xo - xi), a = (yi + yo) / 2;
+        const A = a / ry, B = b * rx / ry;
+        const D = 1 + B * B - A * A;
+        if (D > 0) {
+          const s = Math.sqrt(D);
+          const u1 = (-A * B - s) / (1 + B * B), u2 = (-A * B + s) / (1 + B * B);
+          const x1 = cx + rx * u1, y1 = cy + a + b * rx * u1;
+          const x2 = cx + rx * u2, y2 = cy + a + b * rx * u2;
+          o.lid = 'M ' + pt(x1, y1) + ' A ' + rx + ' ' + ry + ' 0 ' + (a > 0 ? 1 : 0) + ' 1 ' + pt(x2, y2) + ' Z';
+          o.lidLine = 'M ' + pt(x1, y1) + ' L ' + pt(x2, y2);
+        }
+      }
+      return o;
+    };
+    const eL = eye(-E.dx, -1, 'open');
+    const eR = eye(E.dx, 1, h.eyes === 'wink' ? 'wink' : 'open');
+
+    const B = c.brow;
+    const brow = (cx, side, o) => 'M ' + pt(cx - side * B.li, B.y + o[0]) + ' L ' + pt(cx + side * B.lo, B.y + o[1]);
+    const bL = brow(-E.dx, -1, h.browsL || h.brows || [0, 0]);
+    const bR = brow(E.dx, 1, h.browsR || h.brows || [0, 0]);
+
+    const M = c.mouth, k = M.k, mx = M.x + (h.mdx || 0) * k, my = M.y;
+    const f = (x, y) => pt(mx + x * k, my + y * k);
+    const m = { fill: 'M0 0', tongue: 'M0 0', line: 'M0 0', tout: 'M0 0', tline: 'M0 0' };
+    const mt = h.mouth || 'sorriso';
+    if (mt === 'sorriso') m.line = 'M ' + f(-14, -2) + ' Q ' + f(0, 7) + ' ' + f(14, -2);
+    if (mt === 'sorrisinho') m.line = 'M ' + f(-10, 2) + ' Q ' + f(3, 4) + ' ' + f(13, -5);
+    if (mt === 'reta') m.line = 'M ' + f(-11, 0) + ' L ' + f(11, 0);
+    if (mt === 'triste') m.line = 'M ' + f(-11, 5) + ' Q ' + f(0, -2) + ' ' + f(11, 5);
+    if (mt === 'o') m.fill = 'M ' + f(-5.5, 0) + ' A ' + r(5.5 * k) + ' ' + r(7 * k) + ' 0 1 0 ' + f(5.5, 0) + ' A ' + r(5.5 * k) + ' ' + r(7 * k) + ' 0 1 0 ' + f(-5.5, 0) + ' Z';
+    if (mt === 'aberta') {
+      m.fill = 'M ' + f(-15, -3) + ' L ' + f(15, -3) + ' Q ' + f(14, 13) + ' ' + f(0, 13) + ' Q ' + f(-14, 13) + ' ' + f(-15, -3) + ' Z';
+      m.tongue = 'M ' + f(-8, 10) + ' Q ' + f(0, 3) + ' ' + f(8, 10) + ' Q ' + f(4.5, 13) + ' ' + f(0, 13) + ' Q ' + f(-4.5, 13) + ' ' + f(-8, 10) + ' Z';
+    }
+    if (mt === 'grito') {
+      m.fill = 'M ' + f(-15, -7) + ' L ' + f(15, -7) + ' Q ' + f(15, 20) + ' ' + f(0, 20) + ' Q ' + f(-15, 20) + ' ' + f(-15, -7) + ' Z';
+      m.tongue = 'M ' + f(-9.5, 15.5) + ' Q ' + f(0, 6) + ' ' + f(9.5, 15.5) + ' Q ' + f(5.5, 20) + ' ' + f(0, 20) + ' Q ' + f(-5.5, 20) + ' ' + f(-9.5, 15.5) + ' Z';
+    }
+    if (mt === 'lingua') {
+      m.line = 'M ' + f(-13, -2) + ' Q ' + f(0, 6) + ' ' + f(13, -2);
+      m.tout = 'M ' + f(1, 2.6) + ' Q ' + f(0, 15) + ' ' + f(6, 15) + ' Q ' + f(12, 15) + ' ' + f(11, 0.6) + ' Z';
+      m.tline = 'M ' + f(6, 4.5) + ' L ' + f(6.2, 9.5);
+    }
+
+    const S = c.sh, sx = S.x, sy = S.y;
+    const arm = { bl: 'M0 0', br: 'M0 0', fl: 'M0 0', fr: 'M0 0' };
+    const hands = { L: null, R: null };
+    const mk = (s, segs, front, type) => {
+      const P = (q) => [s * (sx + q[0]), sy + q[1]];
+      const st = P([front ? -2 : -6, 0]);
+      let d = 'M ' + pt(st[0], st[1]), lastC = st, last = st;
+      segs.forEach((g) => { const q = P(g[0]), e = P(g[1]); d += ' Q ' + pt(q[0], q[1]) + ' ' + pt(e[0], e[1]); lastC = q; last = e; });
+      arm[(front ? 'f' : 'b') + (s < 0 ? 'l' : 'r')] = d;
+      hands[s < 0 ? 'L' : 'R'] = { x: last[0], y: last[1], a: Math.atan2(last[1] - lastC[1], last[0] - lastC[0]) * 180 / Math.PI, s: s, type: type };
+    };
+    const relax = (s) => mk(s, [[[16, 4], [16, 40]]], false, 'solta');
+    let lines = !!h.lines, wave = false, sheet = false;
+    if (pose === 'relaxado') { relax(-1); relax(1); }
+    if (pose === 'aceno') { relax(-1); mk(1, [[[38, -4], [30, -56]]], false, 'aberta'); wave = true; }
+    if (pose === 'comemora') { [-1, 1].forEach((s) => mk(s, [[[34, -6], [26, -62]]], false, 'punho')); lines = true; }
+    if (pose === 'aponta') { relax(-1); mk(1, [[[26, 6], [36, -8]]], false, 'aponta'); }
+    if (pose === 'joinha') { relax(-1); mk(1, [[[20, 22], [34, 6]]], false, 'joinha'); }
+    if (pose === 'pensa') { relax(-1); mk(1, [[[46, -26], [10, c.head - sy]]], false, 'aberta'); }
+    if (pose === 'cintura') { [-1, 1].forEach((s) => mk(s, [[[30, -2], [24, 20]], [[20, 34], [4, 34]]], false, 'punho')); }
+    if (pose === 'segura') { [-1, 1].forEach((s) => mk(s, [[[18, 24], [32 - sx, 30]]], true, 'punho')); sheet = true; }
+    if (corte === 'rosto') { lines = false; wave = false; }
+
+    const PALM = 'M 7 -9 H 12 Q 17 -9 17 -4 V 4 Q 17 9 12 9 H 7 Q 2 9 2 4 V -4 Q 2 -9 7 -9 Z';
+    const FIST = 'M 6 -9 H 14 Q 19 -9 19 -4 V 4 Q 19 9 14 9 H 6 Q 2 9 2 4 V -4 Q 2 -9 6 -9 Z';
+    const KNUCK = 'M 19 -3 H 15.5 M 19 1.5 H 15.5 M 19 6 H 16';
+    const HANDS = {
+      aberta: { p: PALM, f: 'M 14 -6.5 L 25 -11 M 15 -2 L 27.5 -3.5 M 15 2.5 L 27 4 M 13.5 6.5 L 23 10', tu: 'M 6 -7 L 9 -17', to: 'M0 0', d: 'M0 0' },
+      solta: { p: PALM, f: 'M 14 -5.2 L 24 -5.6 M 15 -0.4 L 25.5 -0.4 M 14.5 4.4 L 24 4.8', tu: 'M 6 -7.5 L 12 -12', to: 'M0 0', d: 'M 17 -2.8 H 22 M 17 2 H 22.5' },
+      punho: { p: FIST, f: 'M0 0', tu: 'M0 0', to: 'M 6.5 -6.5 L 13 -3.5', d: KNUCK },
+      aponta: { p: 'M 6 -8 H 13 Q 18 -8 18 -3 V 3 Q 18 8 13 8 H 6 Q 2 8 2 3 V -3 Q 2 -8 6 -8 Z', f: 'M 14 -4 L 30 -4', tu: 'M0 0', to: 'M 6.5 -5.5 L 13.5 -8.5', d: 'M 18 1 H 14.5 M 18 5 H 15' },
+      joinha: { p: FIST, f: 'M0 0', tu: 'M 9 -7 L 9.5 -19', to: 'M0 0', d: KNUCK }
+    };
+    const hs = c.hs;
+    const swh = sw * 0.85, swL = swh / hs, fw = 6, tw = 6.5;
+    const hw = { fo: r(fw + 2 * swL), fi: fw, to: r(tw + 2 * swL), ti: tw, po: r(2 * swL), dw: r(swL * 0.8), cw: r(swL) };
+    const handV = (hd) => {
+      if (!hd) return { disp: 'none', t: 'translate(0 0)', p: 'M0 0', f: 'M0 0', tu: 'M0 0', to: 'M0 0', d: 'M0 0' };
+      const g = HANDS[hd.type];
+      return { disp: 'inline', t: 'translate(' + pt(hd.x, hd.y) + ') rotate(' + r(hd.a) + ') scale(' + hs + ' ' + r(hs * hd.s) + ')', p: g.p, f: g.f, tu: g.tu, to: g.to, d: g.d };
+    };
+
+    let linesD = 'M0 0';
+    if (lines) {
+      const cx0 = c.corner[0], cy0 = c.corner[1];
+      const seg = (s, a1, b1, a2, b2) => 'M ' + pt(s * (cx0 + a1), cy0 + b1) + ' L ' + pt(s * (cx0 + a2), cy0 + b2);
+      linesD = [-1, 1].map((s) => {
+        const dx = s > 0 ? c.cdx : 0;
+        return seg(s, 8 + dx, -6, 17 + dx, -17) + ' ' + seg(s, 13 + dx, 7, 26 + dx, 3) + ' ' + seg(s, -8, -12, -6, -25);
+      }).join(' ');
+    }
+    let waveD = 'M0 0';
+    if (wave && hands.R) {
+      const wx = hands.R.x, wy = hands.R.y;
+      waveD = 'M ' + pt(wx + 24, wy - 44) + ' Q ' + pt(wx + 32, wy - 32) + ' ' + pt(wx + 27, wy - 19) + ' M ' + pt(wx + 32, wy - 52) + ' Q ' + pt(wx + 44, wy - 33) + ' ' + pt(wx + 35, wy - 13);
+    }
+
+    const sd = corte === 'rosto' || off(p.sombra) ? 'none' : 'inline';
+    return {
+      w: W, h: H,
+      isGrafite: who === 'grafite', isTinta: who === 'tinta',
+      vb: vb.map(r).join(' '),
+      par: corte === 'rosto' ? 'xMidYMin slice' : 'xMidYMax meet',
+      ov: corte === 'rosto' ? 'hidden' : 'visible',
+      cls: 'm m-' + who,
+      label: c.nome + ', ' + humor,
+      sw: r(sw), sw2: r(sw * 0.72), swc: r(sw * 1.2), swt: r(sw * 0.6), swm: r(sw * 1.1), bw: r(sw * 1.5), aw: c.aw,
+      sh: r(shPx / scale), shDisp: sd,
+      lidc: c.lidc,
+      eL: eL, eR: eR, bL: bL, bR: bR, m: m, arm: arm,
+      hL: handV(hands.L), hR: handV(hands.R), hw: hw,
+      cuff: 'M -4 -10.5 Q -4 -12 -2.5 -12 H 2.5 Q 4 -12 4 -10.5 V 10.5 Q 4 12 2.5 12 H -2.5 Q -4 12 -4 10.5 Z',
+      cuffl: 'M 0 -11.5 V 11.5',
+      fx: { lines: linesD, linesDisp: lines ? 'inline' : 'none', wave: waveD, waveDisp: wave ? 'inline' : 'none' },
+      sheet: { disp: sheet ? 'inline' : 'none', t: 'translate(0 ' + r(sy + 6) + ') rotate(-4)' }
+    };
+  }
+}
+</script>
+</body>
+</html>

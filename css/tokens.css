@@ -1,0 +1,61 @@
+/* Gerado por scripts/build-css.mjs a partir de tokens/. Não edite à mão. */
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&family=Literata:ital,opsz,wght@1,7..72,400..500&display=swap");
+
+:root{
+  --ink:#1A1C27;
+  --paper:#FFF5EE;
+  --card:#FFFFFF;
+  --muted:#5E6280;
+  --violet:#7A4BE6;
+  --violet-soft:#E4D8FD;
+  --blue:#5B8DF5;
+  --blue-soft:#D4E1FD;
+  --coral:#FF6B57;
+  --coral-soft:#FFDCD7;
+  --yellow:#FFE066;
+  --amber:#FFB930;
+  --mint:#34C759;
+  --mint-soft:#CFF3DA;
+  --red:#EF4444;
+  --red-soft:#FDE2E2;
+  --stage:#7A4BE6;
+  --on-violet:#FFFFFF;
+  --on-stage:#FFFFFF;
+  --bronze:#F2B48C;
+  --silver:#D6DAE6;
+  --hl-c1:#A7EBBB;
+  --hl-c2:#D2BFFB;
+  --hl-c3:#BCD0FB;
+  --hl-c4:#FFE08A;
+  --hl-c5:#FFC2B8;
+  --crit-c1:#34C759;
+  --crit-c2:#7A4BE6;
+  --crit-c3:#5B8DF5;
+  --crit-c4:#FFB930;
+  --crit-c5:#FF6B57;
+  --stripe:linear-gradient(90deg, #5B8DF5 0 33.33%, #7A4BE6 33.33% 66.66%, #FF6B57 66.66%);
+  --bw:2px;
+  --sh:2px;
+  --press:calc(var(--sh) * 0.75);
+  --r-card:3px;
+  --r-ctl:3px;
+  --r-btn:3px;
+  --r-tag:2px;
+  --dur-press:80ms;
+  --ease-press:ease-out;
+  --f-display:'Bricolage Grotesque', 'Inter', system-ui, sans-serif;
+  --w-display:800;
+  --f-accent:'Instrument Serif', Georgia, 'Times New Roman', serif;
+  --f-quote:'Literata', Georgia, 'Times New Roman', serif;
+  --f-body:'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --f-label:'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+}
+
+/* Plataforma do professor: mesma linguagem, dose mais baixa */
+[data-profile="professor"]{
+  --bw:1.5px;
+  --sh:2px;
+  --paper:#FFFFFF;
+  --f-display:'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --w-display:700;
+}
