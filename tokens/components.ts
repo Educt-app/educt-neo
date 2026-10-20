@@ -8,7 +8,7 @@ import { ink, paper, primary, blue, coral, accent, semantic, surface, border, cr
 import { spacing } from './spacing';
 import { radii } from './radii';
 import { borderWidth, borderStyle } from './borders';
-import { fontSize, fontWeight } from './typography';
+import { fontFamily, fontSize, fontWeight } from './typography';
 import { css as shadowCSS } from './shadows';
 import { press, pressOffset, transition } from './motion';
 
@@ -404,6 +404,10 @@ export const password = {
  * then the grade. Same order and colors as the grade screen.
  */
 export const correction = {
+  /** One family inside the card: labels, step names, scores and the total are all Inter */
+  fontFamily: fontFamily.sans,
+  total: { fontSize: 48, fontWeight: fontWeight.bold, suffixColor: surface.mutedForeground },
+  score: { fontSize: 16, fontWeight: fontWeight.bold, suffixFontSize: 13 },
   bar: { running: accent.yellow, done: accent.mint },
   progress: { fill: primary[400], height: 10 },
   /** Eliminatory checks shown as chips, one at a time */

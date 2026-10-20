@@ -176,6 +176,7 @@ Os tokens ficam em [`tokens/components.ts`](tokens/components.ts), e os exemplos
   2. Depois, uma competência por vez. A atual fica amarela; ao terminar, o quadrado ganha a cor da competência e a nota de 0 a 200 aparece com um pulo.
   3. No fim, a barra fica verde e o título vira "Corrigida". A nota total conta até o valor final, o adesivo "Corrigida!" carimba o cartão e os quadrados pulam em sequência.
   4. Com movimento reduzido, o estado muda sem animação.
+  5. Dentro do cartão, tudo é Inter: nomes das etapas, notas por competência, "Sua nota" e o total. Sem Bricolage nem mono, para a nota não parecer de outro lugar.
 - **Outra tarefa longa:** etapas. A concluída fica verde com check, a atual amarela e a próxima tracejada. Mostre o tempo estimado quando houver.
 
 ### Seleção (`checkbox`, `radio`, `toggle`)

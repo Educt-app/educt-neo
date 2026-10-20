@@ -710,9 +710,9 @@ footer{padding-block:48px 64px;color:var(--muted);font-size:13px}
 .csteps>li+li{border-top:1.5px dashed rgba(26,28,39,.25)}
 .cs-row{display:flex;align-items:center;gap:10px;font-size:14px}
 .cs-name{flex:1;min-width:0}
-.cs-name small{display:block;font:500 10.5px/1.3 var(--f-label);color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
-.cs-score{font:500 11px/1 var(--f-label);color:var(--muted);white-space:nowrap}
-.cs-score b{font:var(--w-display) 17px/1 var(--f-display);color:var(--ink)}
+.cs-name small{display:block;font:400 12.5px/1.3 var(--f-body);color:var(--muted)}
+.cs-score{font:400 13px/1 var(--f-body);color:var(--muted);white-space:nowrap}
+.cs-score b{font:700 16px/1 var(--f-body);color:var(--ink)}
 .csteps .is-wait{color:var(--muted)}
 .csteps .is-wait .st-sq{border-style:dashed;border-color:rgba(26,28,39,.45);background:transparent}
 .csteps .is-wait .cs-score,.csteps .is-now .cs-score{visibility:hidden}
@@ -725,7 +725,7 @@ footer{padding-block:48px 64px;color:var(--muted);font-size:13px}
 .csteps .is-done .cs-score{animation:pop .32s cubic-bezier(.2,1.6,.4,1)}
 @keyframes pop{from{transform:scale(.4);opacity:0}to{transform:none;opacity:1}}
 .zchips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 2px 32px}
-.zc{display:inline-flex;align-items:center;gap:4px;padding:4px 7px;border:1.5px dashed rgba(26,28,39,.45);border-radius:var(--r-tag);font:500 10.5px/1 var(--f-label);color:var(--muted);transition:background-color .2s,color .2s}
+.zc{display:inline-flex;align-items:center;gap:4px;padding:4px 7px;border:1.5px dashed rgba(26,28,39,.45);border-radius:var(--r-tag);font:500 12px/1 var(--f-body);color:var(--muted);transition:background-color .2s,color .2s}
 .zc .i{width:11px;height:11px;stroke-width:3;display:none}
 .zc.ok{border-style:solid;border-color:var(--ink);background:var(--mint-soft);color:var(--ink)}
 .zc.ok .i{display:block}
@@ -733,9 +733,10 @@ footer{padding-block:48px 64px;color:var(--muted);font-size:13px}
 .csteps .is-done .zchips{display:none}
 .corr-final{display:none;align-items:flex-end;justify-content:space-between;gap:12px;padding:12px 0 4px;margin-top:4px;border-top:var(--bw) solid var(--ink)}
 .corr.is-done .corr-final{display:flex;animation:pop .3s ease-out}
-.corr-total{display:flex;align-items:baseline;gap:3px;font-family:var(--f-display);font-weight:var(--w-display)}
-.corr-total b{font-size:56px;line-height:.9;letter-spacing:-.05em;font-weight:inherit}
-.corr-total span{font-size:18px;color:var(--muted)}
+.corr-total{display:flex;align-items:baseline;gap:3px;font-family:var(--f-body)}
+.corr-total b{font-size:48px;line-height:1;letter-spacing:-.03em;font-weight:700}
+.corr-total span{font-size:16px;font-weight:500;color:var(--muted)}
+.corr-l{display:block;font:500 13px/1.3 var(--f-body);color:var(--muted);margin-bottom:2px}
 .corr-stamp{position:absolute;right:-14px;top:-18px;z-index:2;font-size:13px;padding:8px 12px;background:var(--mint);opacity:0;pointer-events:none}
 .corr.is-done .corr-stamp{animation:stamp .42s cubic-bezier(.2,1.4,.4,1) forwards}
 @keyframes stamp{0%{opacity:0;transform:scale(2.4) rotate(-24deg)}60%{opacity:1}100%{opacity:1;transform:scale(1) rotate(-7deg)}}
@@ -1546,7 +1547,7 @@ section[id]{scroll-margin-top:130px}
                   <li class="is-wait" data-score="160" style="--c:var(--crit-c5)"><div class="cs-row"><span class="st-sq"><svg class="i"><use href="#i-check"/></svg></span><span class="cs-name">Competência 5<small>Proposta de intervenção</small></span><span class="cs-score"><b>160</b>/200</span></div></li>
                 </ol>
                 <div class="corr-final">
-                  <div><span class="label muted">Sua nota</span><div class="corr-total tnum"><b id="corr-n">0</b><span>/1000</span></div></div>
+                  <div><span class="corr-l">Sua nota</span><div class="corr-total tnum"><b id="corr-n">0</b><span>/1000</span></div></div>
                   <button class="btn btn-primary btn-sm" type="button">Ver feedback<svg class="i i-sm"><use href="#i-right"/></svg></button>
                 </div>
               </div>
