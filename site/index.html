@@ -73,7 +73,7 @@ em.acc{font-family:var(--f-accent);font-style:italic;font-weight:400;letter-spac
 .shot figcaption span{font-size:13px;color:var(--muted)}
 
 .phone{position:relative;width:100%;max-width:360px;height:760px;background:var(--paper);border:3px solid var(--ink);border-radius:44px;overflow:hidden;box-shadow:10px 10px 0 var(--ink)}
-.screen{position:absolute;inset:0;overflow-y:auto;padding:12px 18px 104px;display:flex;flex-direction:column;gap:14px;scrollbar-width:none}
+.screen{position:absolute;inset:0;overflow-y:auto;padding:12px 18px 132px;display:flex;flex-direction:column;gap:14px;scrollbar-width:none}
 .screen::-webkit-scrollbar{display:none}
 .screen>*{flex-shrink:0}
 .screen.no-tab{padding-bottom:150px}
@@ -501,9 +501,9 @@ td code{font:500 12.5px var(--f-label)}
 .rules li::before{content:"";width:14px;height:14px;flex:none;margin-top:4px;border:var(--bw) solid var(--ink);background:var(--c,var(--yellow));border-radius:3px}
 .rules b{display:block;font:var(--w-display) 17px/1.2 var(--f-display);margin-bottom:4px}
 .rules p{font-size:14px;color:var(--muted);line-height:1.5}
-.next{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;margin-top:18px}
-@media (max-width:760px){.next{grid-template-columns:1fr}}
-.next ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:14.5px}
+.next-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:18px;margin-top:18px}
+@media (max-width:760px){.next-grid{grid-template-columns:1fr}}
+.next-grid ul{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;font-size:14.5px}
 footer{padding-block:48px 64px;color:var(--muted);font-size:13px}
 
 /* ───────── teste de roxo ───────── */
@@ -1061,8 +1061,11 @@ section[id]{scroll-margin-top:130px}
               <div class="rowcard-main"><b>Precisa de ajuda?</b><small>Fale com o time no WhatsApp</small></div>
               <button class="btn btn-sm" type="button">Abrir</button>
             </div>
-            <button class="btn btn-danger btn-block" type="button"><svg class="i i-sm"><use href="#i-logout"/></svg>Sair da conta</button>
-            <button class="btn btn-ghost btn-block" type="button"><svg class="i i-sm" style="color:var(--red)"><use href="#i-trash"/></svg>Deletar conta</button>
+            <div class="sec-label"><span class="label muted">Conta</span></div>
+            <div class="list">
+              <div class="listrow"><svg class="i"><use href="#i-logout"/></svg><span class="listrow-t">Sair da conta</span><svg class="i i-sm"><use href="#i-chev"/></svg></div>
+              <div class="listrow"><svg class="i" style="color:var(--red)"><use href="#i-trash"/></svg><span class="listrow-t">Deletar conta</span><svg class="i i-sm"><use href="#i-chev"/></svg></div>
+            </div>
           </div>
           <nav class="tabbar" aria-label="Navegação do app">
             <span class="tab"><svg class="i"><use href="#i-home"/></svg>Início</span>
@@ -1600,7 +1603,7 @@ section[id]{scroll-margin-top:130px}
       <li style="--c:var(--mint)"><div><b>Brincadeira com hora marcada</b><p>Adesivos tortos, marca-texto e serifa itálica aparecem em momentos de conquista e leitura, não em formulários.</p></div></li>
     </ul>
 
-    <div class="next">
+    <div class="next-grid">
       <article class="win">
         <div class="win-bar bar-blue"><span class="label">Plataforma do professor</span></div>
         <div class="win-body"><p style="font-size:14.5px">Telas densas pedem o perfil “Professor” do painel: borda 1,5, sombra 2, papel branco e títulos em Inter. A linguagem é a mesma, só que mais baixa, para não brigar com tabelas e correções.</p></div>
