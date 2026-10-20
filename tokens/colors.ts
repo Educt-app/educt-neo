@@ -1,7 +1,7 @@
 // ═══════════════════════════════════════════════════════════════
 // EDUCT NEO — COLOR TOKENS
 // Source: site/index.html (Educt Neo, dose fechada em 2026-10-20)
-// Flat colors only. Text on color is ink, except on violet (white).
+// Flat colors only. Violet and blue take white text; ink never goes on a dark color.
 // ═══════════════════════════════════════════════════════════════
 
 // ── Ink & Paper ────────────────────────────────────────────────
@@ -35,14 +35,14 @@ export const primary = {
   900: '#1C1330',
 } as const;
 
-/** Blue — secondary action, classes, C3. One step lighter than v1 to take ink text. */
+/** Blue — secondary action, classes, C3. 500 carries text; 400 is the brand stripe. */
 export const blue = {
   50: '#EDF2FE',
   100: '#D4E1FD', // soft tint
   200: '#A9C3FB',
   300: '#7DA4F6',
-  400: '#5B8DF5', // base — ink text 5.3:1
-  500: '#3771EE', // ds-tokens v1 base
+  400: '#5B8DF5', // brand stripe, logo, focus ring, fills — no text on top (white 3.2:1)
+  500: '#2F66E0', // with text or icons on top — white text 5.1:1
   600: '#2248A6',
   700: '#19367D',
   800: '#112554',
@@ -85,8 +85,8 @@ export const semantic = {
   primary: primary[400],
   primaryForeground: '#FFFFFF',
 
-  secondary: blue[400],
-  secondaryForeground: ink,
+  secondary: blue[500],
+  secondaryForeground: '#FFFFFF',
 
   accent: coral[400],
   accentForeground: ink,
@@ -135,7 +135,7 @@ export const border = {
 export const criteria = {
   1: accent.mint,
   2: primary[400],
-  3: blue[400],
+  3: blue[500],
   4: accent.amber,
   5: coral[400],
 } as const;
@@ -180,7 +180,7 @@ export const stripe = {
 
 export const contrastPairs = [
   { name: 'violeta + branco', background: primary[400], text: '#FFFFFF' },
-  { name: 'azul + tinta', background: blue[400], text: ink },
+  { name: 'azul + branco', background: blue[500], text: '#FFFFFF' },
   { name: 'coral + tinta', background: coral[400], text: ink },
   { name: 'marca-texto + tinta', background: accent.yellow, text: ink },
   { name: 'âmbar + tinta', background: accent.amber, text: ink },

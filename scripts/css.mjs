@@ -20,6 +20,8 @@ export function cssVars(t) {
     '--violet': t.primary[400],
     '--violet-soft': t.primary[100],
     '--blue': t.blue[400],
+    '--blue-strong': t.blue[500],
+    '--on-blue': t.semantic.secondaryForeground,
     '--blue-soft': t.blue[100],
     '--coral': t.coral[400],
     '--coral-soft': t.coral[100],

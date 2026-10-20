@@ -89,7 +89,7 @@ em.acc{font-family:var(--f-accent);font-style:italic;font-weight:400;letter-spac
 .btn:active{transform:translate(var(--press),var(--press));box-shadow:calc(var(--sh) - var(--press)) calc(var(--sh) - var(--press)) 0 var(--ink)}
 .btn:focus-visible,.press:focus-visible,.chip:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
 .btn-primary{background:var(--violet)}
-.btn-secondary{background:var(--blue)}
+.btn-secondary{background:var(--blue-strong);color:var(--on-blue)}
 .btn-accent{background:var(--coral)}
 .btn-danger{background:var(--red)}
 .btn-ghost{background:transparent;border-color:transparent;box-shadow:none}
@@ -130,7 +130,7 @@ em.acc{font-family:var(--f-accent);font-style:italic;font-weight:400;letter-spac
 .win-ctl i{width:11px;height:11px;border:1.5px solid var(--ink);border-radius:2px;background:var(--card)}
 .bar-violet{background:var(--violet)}
 .bar-yellow{background:var(--yellow)}
-.bar-blue{background:var(--blue)}
+.bar-blue{background:var(--blue-strong);color:var(--on-blue)}
 .bar-mint{background:var(--mint)}
 .bar-tri{background:linear-gradient(90deg,var(--blue) 0 33.33%,var(--violet) 33.33% 66.66%,var(--coral) 66.66%)}
 .win-body{padding:16px}
@@ -508,6 +508,7 @@ footer{padding-block:48px 64px;color:var(--muted);font-size:13px}
 
 /* ───────── teste de roxo ───────── */
 .btn-primary,.cta-card,.cta-tile,.fab,.e-mark,.bar-violet,.avatar:not([style*="--c"]),.ctag[style*="--violet"],.cnum[style*="--violet"],.opt:has(input:checked) .tick{color:var(--on-violet)}
+.cnum[style*="--crit-c3"],.ctag[style*="--crit-c3"]{color:var(--on-blue)}
 .close-sq{color:var(--ink)}
 .stage-head h2,.group-h h3{color:var(--on-stage)}
 .seg .vdot{display:inline-block;width:10px;height:10px;margin-right:6px;border:1.5px solid var(--ink);border-radius:50%;background:var(--c);vertical-align:-1px}
@@ -990,7 +991,7 @@ section[id]{scroll-margin-top:130px}
             <div class="crits">
               <div class="crit"><span class="cnum" style="--c:var(--mint)">1</span><div class="crit-main"><div class="crit-top"><span class="crit-name">Atendimento ao tema</span><span class="crit-score tnum"><b>1.2</b>/2</span></div><div class="meter" style="--c:var(--mint);--p:60%"><i></i></div></div></div>
               <div class="crit"><span class="cnum" style="--c:var(--violet)">2</span><div class="crit-main"><div class="crit-top"><span class="crit-name">Coesão</span><span class="crit-score tnum"><b>1.6</b>/2</span></div><div class="meter" style="--c:var(--violet);--p:80%"><i></i></div></div></div>
-              <div class="crit"><span class="cnum" style="--c:var(--blue)">3</span><div class="crit-main"><div class="crit-top"><span class="crit-name">Coerência dos argumentos</span><span class="crit-score tnum"><b>2</b>/2</span></div><div class="meter" style="--c:var(--blue);--p:100%"><i></i></div></div></div>
+              <div class="crit"><span class="cnum" style="--c:var(--crit-c3)">3</span><div class="crit-main"><div class="crit-top"><span class="crit-name">Coerência dos argumentos</span><span class="crit-score tnum"><b>2</b>/2</span></div><div class="meter" style="--c:var(--crit-c3);--p:100%"><i></i></div></div></div>
               <div class="crit"><span class="cnum" style="--c:var(--amber)">4</span><div class="crit-main"><div class="crit-top"><span class="crit-name">Atendimento ao gênero</span><span class="crit-score tnum"><b>1.2</b>/2</span></div><div class="meter" style="--c:var(--amber);--p:60%"><i></i></div></div></div>
               <div class="crit"><span class="cnum" style="--c:var(--coral)">5</span><div class="crit-main"><div class="crit-top"><span class="crit-name">Domínio da norma culta</span><span class="crit-score tnum"><b>0.8</b>/2</span></div><div class="meter" style="--c:var(--coral);--p:40%"><i></i></div></div></div>
             </div>
@@ -1205,7 +1206,7 @@ section[id]{scroll-margin-top:130px}
               </ol>
             </div>
             <div class="rowcard" style="align-items:flex-start">
-              <span class="ic-box" style="--c:var(--blue)"><svg class="i"><use href="#i-cap"/></svg></span>
+              <span class="ic-box" style="--c:var(--blue-strong);color:var(--on-blue)"><svg class="i"><use href="#i-cap"/></svg></span>
               <div class="rowcard-main"><div class="row between"><b>Professor assinante</b><b class="tnum">+6 meses</b></div><small>Seu professor também pode usar o código: ele assina o PRO por R$ 10/mês.</small></div>
             </div>
           </div></div>
@@ -1221,14 +1222,15 @@ section[id]{scroll-margin-top:130px}
   <section class="sec" id="tokens" aria-labelledby="tok-h">
     <div class="sec-head">
       <h2 id="tok-h">Tokens</h2>
-      <p>As cores da Educt continuam, só que chapadas. O violeta escurece para #7A4BE6 e leva texto branco; as outras levam texto em tinta. Assim todas passam no contraste que hoje falha no branco sobre violeta, coral e verde.</p>
+      <p>As cores da Educt continuam, só que chapadas. Violeta e azul levam texto branco; as outras levam texto em tinta. Tinta nunca vai sobre cor escura. Assim todas passam no contraste AA.</p>
     </div>
 
     <div class="palette">
       <div class="sw"><div class="sw-c" style="--c:var(--ink)"></div><div class="sw-i"><b>Tinta</b><code>#1A1C27 · surface.foreground</code><small>Texto, bordas e sombras. A única cor escura do sistema.</small></div></div>
       <div class="sw"><div class="sw-c" style="--c:var(--paper)"><span>15,8</span></div><div class="sw-i"><b>Papel</b><code>#FFF5EE · novo</code><small>Fundo das telas. Alternativas no painel: lavanda e branco.</small></div></div>
       <div class="sw"><div class="sw-c" style="--c:var(--violet)"><span id="sw-v-n">5,3</span></div><div class="sw-i"><b>Violeta</b><code id="sw-v-code">#7A4BE6 · primary novo</code><small id="sw-v-txt">Ação principal, C2, marca. Texto por cima em branco.</small></div></div>
-      <div class="sw"><div class="sw-c" style="--c:var(--blue)"><span>5,3</span></div><div class="sw-i"><b>Azul</b><code>#5B8DF5 · entre blue.300 e .400</code><small>Ação secundária, turmas, C3. Um tom mais claro para aceitar tinta.</small></div></div>
+      <div class="sw"><div class="sw-c" style="--c:var(--blue-strong)"><span>5,1</span></div><div class="sw-i"><b>Azul</b><code>#2F66E0 · blue.500</code><small>Ação secundária, turmas, C3. Texto por cima em branco.</small></div></div>
+      <div class="sw"><div class="sw-c" style="--c:var(--blue)"></div><div class="sw-i"><b>Azul da marca</b><code>#5B8DF5 · blue.400</code><small>Listra da marca, logo, foco e barras. Sem texto por cima.</small></div></div>
       <div class="sw"><div class="sw-c" style="--c:var(--coral)"><span>6,1</span></div><div class="sw-i"><b>Coral</b><code>#FF6B57 · coral.400</code><small>Destaque, sequência, C5. Mantido.</small></div></div>
       <div class="sw"><div class="sw-c" style="--c:var(--yellow)"><span>13,0</span></div><div class="sw-i"><b>Marca-texto</b><code>#FFE066 · novo</code><small>Aba ativa, seleção, XP, adesivos.</small></div></div>
       <div class="sw"><div class="sw-c" style="--c:var(--amber)"><span>9,9</span></div><div class="sw-i"><b>Âmbar</b><code>#FFB930 · warning</code><small>Atenção, pendente, C4.</small></div></div>
@@ -1236,7 +1238,7 @@ section[id]{scroll-margin-top:130px}
       <div class="sw"><div class="sw-c" style="--c:var(--red)"><span>4,5</span></div><div class="sw-i"><b>Vermelho</b><code>#EF4444 · destructive</code><small>Erro e exclusão. Sublinhado ondulado na redação.</small></div></div>
       <div class="sw"><div class="sw-c" style="--c:var(--muted)"></div><div class="sw-i"><b>Grafite</b><code>#5E6280 · novo</code><small>Texto de apoio. 5,5:1 sobre papel (o atual dá 4,9 no branco).</small></div></div>
     </div>
-    <p class="muted" style="font-size:13px;margin-top:10px">O número no canto de cada cor é o contraste com o texto que vai por cima: tinta, ou branco no violeta. Tudo passa no AA (4,5:1). Clique numa cor para copiar o token.</p>
+    <p class="muted" style="font-size:13px;margin-top:10px">O número no canto de cada cor é o contraste com o texto que vai por cima: tinta, ou branco no violeta e no azul. Tudo passa no AA (4,5:1). Clique numa cor para copiar o token.</p>
 
     <h3 class="sub-h">Tipografia</h3>
     <div class="typerows">
@@ -1277,7 +1279,7 @@ section[id]{scroll-margin-top:130px}
           <tr><td>Borda</td><td><code>1px rgba(155,106,240,.12)</code></td><td><code>2px #1A1C27</code> em tudo que é objeto</td></tr>
           <tr><td>Sombra</td><td>Difusa, só no card elevado</td><td><code>2px 2px 0 tinta</code> em tudo que se aperta ou flutua</td></tr>
           <tr><td>Hover / clique</td><td>Sobe 3px e cresce 2%</td><td>Parado no hover; no clique afunda três quartos da sombra (1,5px) em 80 ms</td></tr>
-          <tr><td>Texto sobre cor</td><td>Branco (3,7 no violeta, 2,2 no verde)</td><td>Tinta (6,1 a 13:1); branco só no violeta (5,3:1)</td></tr>
+          <tr><td>Texto sobre cor</td><td>Branco (3,7 no violeta, 2,2 no verde)</td><td>Tinta (6,1 a 13:1); branco no violeta (5,3:1) e no azul (5,1:1)</td></tr>
           <tr><td>Gradiente</td><td>Escuro, 4 cores fora da paleta</td><td>Listra tricolor chapada: azul, violeta, coral</td></tr>
           <tr><td>Fundo</td><td><code>#FFFFFF</code></td><td>Papel <code>#FFF5EE</code>; cartões brancos</td></tr>
           <tr><td>Desabilitado</td><td>Opacidade 40%</td><td>Contorno tracejado, sem sombra, texto grafite</td></tr>
@@ -1333,7 +1335,7 @@ section[id]{scroll-margin-top:130px}
           <p style="line-height:2">
             <mark class="hl" style="--hl:var(--hl-c1)">a norma culta</mark>, <mark class="hl" style="--hl:var(--hl-c2)">o repertório</mark>, <mark class="hl" style="--hl:var(--hl-c3)">o argumento</mark>, <mark class="hl" style="--hl:var(--hl-c4)">os conectivos</mark> e <mark class="hl on" style="--hl:var(--hl-c5)">a proposta de intervenção</mark>. Erros pontuais ganham <span class="err">sublinhado</span>.
           </p>
-          <div class="legend"><span><i style="--c:var(--mint)"></i>C1</span><span><i style="--c:var(--violet)"></i>C2</span><span><i style="--c:var(--blue)"></i>C3</span><span><i style="--c:var(--amber)"></i>C4</span><span><i style="--c:var(--coral)"></i>C5</span><span>sublinhado = trecho aberto</span></div>
+          <div class="legend"><span><i style="--c:var(--mint)"></i>C1</span><span><i style="--c:var(--violet)"></i>C2</span><span><i style="--c:var(--crit-c3)"></i>C3</span><span><i style="--c:var(--amber)"></i>C4</span><span><i style="--c:var(--coral)"></i>C5</span><span>sublinhado = trecho aberto</span></div>
         </div>
       </div>
 
@@ -1543,7 +1545,7 @@ section[id]{scroll-margin-top:130px}
                     <div class="zchips"><span class="zc"><svg class="i"><use href="#i-check"/></svg>Fuga ao tema</span><span class="zc"><svg class="i"><use href="#i-check"/></svg>Tipo textual</span><span class="zc"><svg class="i"><use href="#i-check"/></svg>Mais de 7 linhas</span><span class="zc"><svg class="i"><use href="#i-check"/></svg>Cópia dos textos motivadores</span></div></li>
                   <li class="is-wait" data-score="160" style="--c:var(--crit-c1)"><div class="cs-row"><span class="st-sq"><svg class="i"><use href="#i-check"/></svg></span><span class="cs-name">Competência 1<small>Norma culta</small></span><span class="cs-score"><b>160</b>/200</span></div></li>
                   <li class="is-wait" data-score="160" style="--c:var(--crit-c2);--on:#fff"><div class="cs-row"><span class="st-sq"><svg class="i"><use href="#i-check"/></svg></span><span class="cs-name">Competência 2<small>Tema e repertório</small></span><span class="cs-score"><b>160</b>/200</span></div></li>
-                  <li class="is-wait" data-score="120" style="--c:var(--crit-c3)"><div class="cs-row"><span class="st-sq"><svg class="i"><use href="#i-check"/></svg></span><span class="cs-name">Competência 3<small>Argumentação</small></span><span class="cs-score"><b>120</b>/200</span></div></li>
+                  <li class="is-wait" data-score="120" style="--c:var(--crit-c3);--on:#fff"><div class="cs-row"><span class="st-sq"><svg class="i"><use href="#i-check"/></svg></span><span class="cs-name">Competência 3<small>Argumentação</small></span><span class="cs-score"><b>120</b>/200</span></div></li>
                   <li class="is-wait" data-score="160" style="--c:var(--crit-c4)"><div class="cs-row"><span class="st-sq"><svg class="i"><use href="#i-check"/></svg></span><span class="cs-name">Competência 4<small>Coesão</small></span><span class="cs-score"><b>160</b>/200</span></div></li>
                   <li class="is-wait" data-score="160" style="--c:var(--crit-c5)"><div class="cs-row"><span class="st-sq"><svg class="i"><use href="#i-check"/></svg></span><span class="cs-name">Competência 5<small>Proposta de intervenção</small></span><span class="cs-score"><b>160</b>/200</span></div></li>
                 </ol>
@@ -1675,7 +1677,7 @@ section[id]{scroll-margin-top:130px}
       <p>O que segura o estilo no lugar quando a tela fica cheia.</p>
     </div>
     <ul class="rules">
-      <li style="--c:var(--ink)"><div><b>Texto em cor é tinta, menos no violeta</b><p>Coral, azul, verde e amarelo levam tinta. O violeta escuro leva branco. Nada de branco nas outras cores: é isso que faz todas passarem no contraste.</p></div></li>
+      <li style="--c:var(--ink)"><div><b>Violeta e azul levam branco; o resto, tinta</b><p>Coral, verde, âmbar e amarelo levam tinta. Violeta e azul levam texto e ícone brancos. Tinta nunca vai sobre cor escura, e branco nunca vai sobre cor clara: é isso que faz todas passarem no contraste.</p></div></li>
       <li style="--c:var(--violet)"><div><b>Sombra quer dizer “aperte”</b><p>Botões, atalhos, opções e janelas flutuantes têm sombra. Texto de leitura, como a redação e listas de critérios, fica sem.</p></div></li>
       <li style="--c:var(--yellow)"><div><b>Uma cor forte por bloco</b><p>Cada cartão escolhe uma cor de destaque. O resto é papel, branco e tinta.</p></div></li>
       <li style="--c:var(--coral)"><div><b>Cor do critério é fixa por posição</b><p>1 menta, 2 violeta, 3 azul, 4 âmbar, 5 coral, em qualquer modelo (ENEM, UEMA…). O app usa vermelho no 5; aqui é coral para não confundir com erro.</p></div></li>
@@ -1794,8 +1796,8 @@ section[id]{scroll-margin-top:130px}
   const TYPE={
     'Artes':{c:'var(--coral)',ic:'palette'},
     'Conceito':{c:'var(--yellow)',ic:'bulb'},
-    'Música':{c:'var(--blue)',ic:'music'},
-    'Livro':{c:'var(--violet)',ic:'book'},
+    'Música':{c:'var(--blue-strong)',ic:'music',on:'var(--on-blue)'},
+    'Livro':{c:'var(--violet)',ic:'book',on:'var(--on-violet)'},
     'Filmes e séries':{c:'var(--mint)',ic:'film'}
   };
   const REP={
@@ -1839,7 +1841,7 @@ section[id]{scroll-margin-top:130px}
     ?'<span class="e-mark">E</span><b>Educt</b><span class="tag tag-blue">'+ic('badge','i i-sm')+'Oficial</span>'
     :'<span class="avatar" style="--s:22px;--c:'+r.byc+'">'+r.by[1].toUpperCase()+'</span><b>'+r.by+'</b>';
   const bySmall=r=>r.by==='educt'?'<span class="e-mark" style="width:20px;height:20px;font-size:11px">E</span>Educt · oficial':'<span class="avatar" style="--s:20px;--c:'+r.byc+'">'+r.by[1].toUpperCase()+'</span>por '+r.by;
-  const typeTag=r=>'<span class="tag" style="background:'+TYPE[r.tipo].c+'">'+ic(TYPE[r.tipo].ic,'i i-sm')+r.tipo+' · '+r.sub+'</span>';
+  const typeTag=r=>'<span class="tag" style="background:'+TYPE[r.tipo].c+(TYPE[r.tipo].on?';color:'+TYPE[r.tipo].on:'')+'">'+ic(TYPE[r.tipo].ic,'i i-sm')+r.tipo+' · '+r.sub+'</span>';
   const thumb=k=>'<span class="cover has-img"><img src="'+REP[k].img+'" alt="" loading="lazy"></span>';
   const row=k=>{const r=REP[k];return '<button class="rep press" type="button" data-open="'+k+'" data-by="'+(r.by==='educt'?'oficial':'comunidade')+'" data-title="'+r.title.toLowerCase()+'">'+thumb(k)+'<span class="rep-main"><b>'+r.title+'</b><span class="rep-meta">'+r.tipo+' · '+r.meta+'</span><span class="by">'+bySmall(r)+'</span></span>'+ic('chev','i i-sm')+'</button>';};
   const feedItem=k=>{const r=REP[k];return '<div class="fitem"><div class="fcard" role="button" tabindex="0" data-open="'+k+'" aria-label="Abrir '+r.title+'">'
@@ -1897,7 +1899,7 @@ section[id]{scroll-margin-top:130px}
     function show(v){st.view=v;$$('.rv-view').forEach(el=>el.hidden=el.dataset.v!==v);}
     function open(k,from,instant){
       const r=REP[k];st.open=k;st.from=from||null;
-      bar.style.background=TYPE[r.tipo].c;bar.style.color=r.tipo==='Livro'?'var(--on-violet)':'';
+      bar.style.background=TYPE[r.tipo].c;bar.style.color=TYPE[r.tipo].on||'';
       $('.dlabel').textContent=r.tipo+' · '+r.sub;
       body.innerHTML='<div class="dimg"><img src="'+r.img+'" alt="'+r.alt+'"></div>'
         +'<div class="by">'+by(r)+'</div>'

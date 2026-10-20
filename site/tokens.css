@@ -9,6 +9,8 @@
   --violet:#7A4BE6;
   --violet-soft:#E4D8FD;
   --blue:#5B8DF5;
+  --blue-strong:#2F66E0;
+  --on-blue:#FFFFFF;
   --blue-soft:#D4E1FD;
   --coral:#FF6B57;
   --coral-soft:#FFDCD7;
@@ -30,7 +32,7 @@
   --hl-c5:#FFC2B8;
   --crit-c1:#34C759;
   --crit-c2:#7A4BE6;
-  --crit-c3:#5B8DF5;
+  --crit-c3:#2F66E0;
   --crit-c4:#FFB930;
   --crit-c5:#FF6B57;
   --stripe:linear-gradient(90deg, #5B8DF5 0 33.33%, #7A4BE6 33.33% 66.66%, #FF6B57 66.66%);

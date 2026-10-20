@@ -120,7 +120,9 @@ export const window = {
     paddingVertical: spacing[2],
     borderBottom: borderStyle.solid,
     defaultBackground: primary[100],
-    backgrounds: { violet: primary[400], blue: blue[400], yellow: accent.yellow, mint: accent.mint },
+    backgrounds: { violet: primary[400], blue: blue[500], yellow: accent.yellow, mint: accent.mint },
+    /** Violet and blue bars take white text */
+    foregrounds: { violet: '#FFFFFF', blue: '#FFFFFF', yellow: ink, mint: ink },
   },
 } as const;
 

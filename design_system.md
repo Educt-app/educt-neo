@@ -12,7 +12,7 @@ A referência visual é o site em [`site/index.html`](site/index.html), que lê 
 
 ## Princípios
 
-1. **A cor do texto depende do fundo.** Coral, azul, verde, amarelo e âmbar levam texto em tinta (`#1A1C27`). Só o violeta leva texto branco. Branco nas outras cores não passa no contraste.
+1. **A cor do texto depende do fundo.** Violeta e azul levam texto e ícone brancos. Coral, verde, amarelo e âmbar levam texto em tinta (`#1A1C27`). Tinta nunca vai sobre cor escura, e branco nas cores claras não passa no contraste.
 2. **Sombra quer dizer "aperte".** Botões, atalhos, opções e janelas flutuantes têm sombra. A redação, as listas de critérios e o texto de leitura ficam sem.
 3. **Uma cor forte por bloco.** Cada cartão escolhe uma cor de destaque. O resto é papel, branco e tinta.
 4. **A cor do critério é fixa pela posição:** 1 menta, 2 violeta, 3 azul, 4 âmbar, 5 coral. Vale em qualquer modelo (ENEM, UEMA…). O 5 é coral, e não vermelho, para não parecer erro.
@@ -32,7 +32,8 @@ A referência visual é o site em [`site/index.html`](site/index.html), que lê 
 | `paper.white` | `#FFFFFF` | tinta | — | Fundo do professor; cartões |
 | `surface.mutedForeground` | `#5E6280` | — | 5,5:1 no papel | Texto de apoio |
 | `primary[400]` | `#7A4BE6` | **branco** | 5,3:1 | Ação principal, C2, marca |
-| `blue[400]` | `#5B8DF5` | tinta | 5,3:1 | Ação secundária, turmas, C3 |
+| `blue[500]` | `#2F66E0` | **branco** | 5,1:1 | Ação secundária, turmas, C3: todo azul com texto ou ícone em cima |
+| `blue[400]` | `#5B8DF5` | — | — | Listra da marca, logo, anel de foco, barras e medidores. Nunca leva texto. |
 | `coral[400]` | `#FF6B57` | tinta | 6,1:1 | Destaque, sequência, C5 |
 | `accent.yellow` | `#FFE066` | tinta | 13,0:1 | Aba ativa, seleção, XP, adesivos |
 | `accent.amber` | `#FFB930` | tinta | 9,9:1 | Atenção, pendente, C4 |
@@ -51,7 +52,7 @@ O tom 100 de cada paleta é o fundo suave: `primary[100]` `#E4D8FD`, `blue[100]`
 |---|---|---|
 | 1 | menta `#34C759` | `#A7EBBB` |
 | 2 | violeta `#7A4BE6` | `#D2BFFB` |
-| 3 | azul `#5B8DF5` | `#BCD0FB` |
+| 3 | azul `#2F66E0` | `#BCD0FB` |
 | 4 | âmbar `#FFB930` | `#FFE08A` |
 | 5 | coral `#FF6B57` | `#FFC2B8` |
 
@@ -268,8 +269,8 @@ Os nomes que existiam continuam onde fazia sentido, mas **os valores mudaram**. 
 | `ds-tokens` (v1) | `educt-neo` |
 |---|---|
 | `primary[400]` `#9B6AF0` + texto branco | `primary[400]` `#7A4BE6` + texto branco. O antigo virou `primary[300]`. |
-| `blue[400]` `#3771EE` + texto branco | `blue[400]` `#5B8DF5` + **texto tinta**. O antigo virou `blue[500]`. |
-| `semantic.*Foreground` branco | Tinta em tudo, menos `primaryForeground` |
+| `blue[400]` `#3771EE` + texto branco | Com texto: `blue[500]` `#2F66E0` + texto branco (5,1:1; o antigo dava 4,4). Sem texto, na marca e em barras: `blue[400]` `#5B8DF5`. |
+| `semantic.*Foreground` branco | Branco em `primaryForeground` e `secondaryForeground`; tinta nas outras |
 | `gradients.*` | Saem. Use `stripe` (listra chapada). |
 | `glow.*` | Saem |
 | `surface.surface`, `surfaceElevated`, `muted`, cinzas `#D1D5DB` `#6B7280` `#F3F4F6` | Saem. Use papel, branco, tinta e `mutedForeground`. |
