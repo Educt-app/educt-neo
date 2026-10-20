@@ -1,7 +1,7 @@
 // Three checks, all must pass:
 // 1. every color pair in contrastPairs reaches WCAG AA (4.5:1);
 // 2. css/tokens.css and site/tokens.css are up to date with tokens/;
-// 3. the site loads tokens.css and doesn't redefine any token.
+// 3. the site loads tokens.css, doesn't redefine any token and takes motion from the tokens.
 
 import { readFileSync } from 'node:fs';
 import { loadTokens, buildCSS, cssVars } from './css.mjs';
@@ -50,6 +50,11 @@ const style = (html.match(/<style>[\s\S]*?<\/style>/g) || []).join('\n');
 const redefined = Object.keys(cssVars(t)).filter((k) => new RegExp(`(^|[;{\\s])${k}\\s*:`).test(style));
 if (redefined.length) fail(`redefine tokens no CSS da página: ${redefined.join(', ')}`);
 else console.log('  ✓ nenhum token redefinido na página');
+// Motion must come from the tokens: no raw durations or curves in transitions/animations.
+const motion = style.match(/(transition|animation)(-[a-z-]+)?\s*:[^;}]*/g) || [];
+const raw = motion.filter((d) => /(^|[\s,(:])\.?\d+(\.\d+)?m?s\b|cubic-bezier|ease-in-out|\bease\b(?!-)|\blinear\b/.test(d.replace(/^[a-z-]+\s*:/, ':')));
+if (raw.length) fail(`movimento fora dos tokens: ${raw.slice(0, 3).join(' | ')}${raw.length > 3 ? ` (+${raw.length - 3})` : ''}`);
+else console.log(`  ✓ ${motion.length} transições e animações usam os tokens de movimento`);
 
 if (failed) {
   console.log(`\n${failed} problema(s).`);

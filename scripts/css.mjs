@@ -45,9 +45,19 @@ export function cssVars(t) {
     '--r-ctl': `${t.radiiNamed.control}px`,
     '--r-btn': `${t.radiiNamed.button}px`,
     '--r-tag': `${t.radiiNamed.tag}px`,
-    // movimento
-    '--dur-press': `${t.press.duration}ms`,
-    '--ease-press': t.press.easing,
+    // movimento: toque, cor, entrar/sair, quique e espera
+    '--dur-press': `${t.duration.press}ms`,
+    '--dur-color': `${t.duration.color}ms`,
+    '--dur-exit': `${t.duration.exit}ms`,
+    '--dur-enter': `${t.duration.enter}ms`,
+    '--dur-bounce': `${t.duration.bounce}ms`,
+    '--dur-fill': `${t.duration.fill}ms`,
+    '--dur-loader': `${t.loop.loader}ms`,
+    '--dur-skeleton': `${t.loop.skeleton}ms`,
+    '--ease-out': t.easing.out,
+    '--ease-in': t.easing.in,
+    '--ease-bounce': t.easing.bounce,
+    '--move': `${t.distance}px`,
     // tipo
     '--f-display': aluno.displayFont,
     '--w-display': aluno.displayWeight,

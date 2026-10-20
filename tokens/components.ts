@@ -10,7 +10,7 @@ import { radii } from './radii';
 import { borderWidth, borderStyle } from './borders';
 import { fontFamily, fontSize, fontWeight } from './typography';
 import { css as shadowCSS } from './shadows';
-import { press, pressOffset, transition } from './motion';
+import { press, pressOffset, transition, loop, distance, duration } from './motion';
 
 const SHADOW = 2;
 
@@ -229,8 +229,8 @@ export const toast = {
   /** Above the tab bar, centered */
   placement: 'bottom',
   duration: 4000,
-  enter: { duration: 180, easing: 'ease-out', offsetY: 10 },
-  exit: { duration: 160, easing: 'ease-in' },
+  enter: transition.enter,
+  exit: transition.exit,
   /** Action is an underlined link: "Ver", "Desfazer", "Tentar de novo" */
   action: { fontWeight: fontWeight.bold, underline: primary[400] },
   variants: {
@@ -261,7 +261,9 @@ export const dialog = {
   maxWidth: 330,
   boxShadow: shadowCSS.md,
   barBackground: { destructive: accent.red, default: primary[100] },
-  scrim: { color: ink, opacity: transition.scrim.opacity },
+  /** Enters with the dialog: 180ms */
+  enter: transition.enter,
+  scrim: { color: ink, opacity: transition.scrim.opacity, duration: transition.enter.duration },
   /** Cancel (neutral) on the left, the action on the right */
   actions: { gap: spacing[2.5] },
 } as const;
@@ -284,16 +286,17 @@ export const loader = {
   colors: stripe.colors,
   size: 12,
   gap: 6,
-  bounce: 9,
-  duration: 900,
-  stagger: 120,
+  bounce: distance,
+  duration: loop.loader,
+  /** Delay between squares */
+  stagger: duration.color,
 } as const;
 
 /** Show the shape of what's coming, never a lone spinner on a list */
 export const skeleton = {
   color: 'rgba(26, 28, 39, 0.1)',
   borderRadius: radii.xs,
-  pulse: { duration: 1200, minOpacity: 0.45 },
+  pulse: { duration: loop.skeleton, minOpacity: 0.45 },
   container: { border: `${borderWidth.base}px dashed ${border.divider}` },
 } as const;
 
@@ -329,7 +332,7 @@ export const radio = {
 export const toggle = {
   track: { width: 50, height: 28, border: borderStyle.solid, borderRadius: radii.base, off: surface.card, on: primary[400] },
   knob: { size: 16, inset: 4, borderRadius: radii.xs, off: ink, on: '#FFFFFF', travel: 22 },
-  duration: 120,
+  duration: transition.color.duration,
   hitArea: 44,
 } as const;
 
@@ -409,7 +412,7 @@ export const correction = {
   total: { fontSize: 48, fontWeight: fontWeight.bold, suffixColor: surface.mutedForeground },
   score: { fontSize: 16, fontWeight: fontWeight.bold, suffixFontSize: 13 },
   bar: { running: accent.yellow, done: accent.mint },
-  progress: { fill: primary[400], height: 10 },
+  progress: { fill: primary[400], height: 10, transition: transition.fill },
   /** Eliminatory checks shown as chips, one at a time */
   zeroChecks: ['Fuga ao tema', 'Tipo textual', 'Mais de 7 linhas', 'Cópia dos textos motivadores'],
   step: {
@@ -418,10 +421,14 @@ export const correction = {
     /** Done marker takes the competency color (criteria[1..5]); zero check is mint */
     done: { background: criteria, zeroCheck: accent.mint },
   },
-  /** Stamp sticker when done: scales from 2.4× and lands at −7° */
-  stamp: { background: accent.mint, rotate: -7, duration: 420, easing: 'cubic-bezier(0.2, 1.4, 0.4, 1)' },
-  /** Total grade counts up with ease-out */
-  countUp: { duration: 900 },
+  /** Step changes are color only */
+  stepChange: transition.color,
   /** Score pops in when a competency finishes */
-  scorePop: { duration: 320, easing: 'cubic-bezier(0.2, 1.6, 0.4, 1)' },
+  scorePop: transition.bounce,
+  /** Done: stamp sticker scales from 2.4× and lands at −7°, once */
+  stamp: { background: accent.mint, rotate: -7, ...transition.bounce },
+  /** Total grade counts up */
+  countUp: transition.fill,
+  /** Squares hop one after the other when done */
+  hop: { ...transition.bounce, distance, stagger: duration.press },
 } as const;

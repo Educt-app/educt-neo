@@ -49,7 +49,7 @@ export {
   css as shadowCSS,
 } from './shadows';
 
-export { press, pressOffset, transition } from './motion';
+export { duration, loop, easing, distance, press, pressOffset, transition, reducedMotion } from './motion';
 
 export { profiles, type ProfileName } from './profiles';
 

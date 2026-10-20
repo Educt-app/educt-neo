@@ -99,14 +99,40 @@ A Instrument Serif nunca vai em botões nem em formulários. O `fontImport` traz
 
 ## Movimento
 
-| | Valor |
-|---|---|
-| Hover | Nada se mexe. O botão ghost ganha fundo violeta claro. |
-| Clique | Afunda 3/4 da sombra (`press.ratio` 0,75; 1,5px com sombra de 2px) em 80ms, `ease-out`. O resto da sombra fica. |
-| Folha inferior | Sobe em 320ms com um leve quique, `cubic-bezier(0.2, 1.25, 0.4, 1)`. O fundo escurece com tinta a 45%. |
-| Troca de vista | 180ms, entrando 6px de baixo |
+**Todo movimento é uma de cinco coisas: toque, cor, entrar/sair, quique ou espera. Não crie token por animação.** Os tokens ficam em [`tokens/motion.ts`](tokens/motion.ts) e chegam ao CSS como `--dur-*`, `--ease-*` e `--move`.
 
-Com `prefers-reduced-motion`, as transições são desligadas.
+| Token | Duração | Curva | Uso |
+|---|---|---|---|
+| `press` (toque) | 80ms | `ease-out` | Afunda 3/4 da sombra (`press.ratio` 0,75: 1,5px com sombra de 2px). No hover, nada se mexe. |
+| `color` (cor) | 120ms | `ease-out` | Fundo, borda e sombra mudando de cor |
+| `exit` (sair) | 120ms | `ease-in` | O que sai da tela |
+| `enter` (entrar) | 180ms | `ease-out` | O que aparece, vindo de 8px |
+| `bounce` (quique) | 320ms | quique, `cubic-bezier(0.2, 1.25, 0.4, 1)` | Comemoração (uma vez) e folha inferior |
+| `fill` (encher) | 320ms | `ease-out` | Barra, medidor e número contando |
+| `loop.loader` | 900ms | `ease-out` | Loader da marca |
+| `loop.skeleton` | 1200ms | `ease-out` | Skeleton |
+
+**Distância:** 8px (`distance`), para entrar, sair e quicar.
+
+**Fundo escuro:** tinta a 45% (`transition.scrim`). Ele não tem duração própria: acompanha o que abre. São 320ms com a folha e 180ms com o diálogo.
+
+### Combinações
+
+| Animação | Combinação |
+|---|---|
+| troca de aba | cor (traço) + entrar (conteúdo) |
+| diálogo | entrar + fundo escuro |
+| banner | entrar, vindo de cima |
+| etapas da correção | cor |
+| foco e erro de campo | cor |
+| barra, medidor e número contando | encher |
+| nota pronta, conquista, sequência +1, semana fechada | quique (uma vez) |
+| mascote espiando | quique |
+| pilha de telas | transição nativa |
+| teclado | duração do sistema |
+| tour | sem animação extra |
+
+Com "reduzir movimento" ligado (`prefers-reduced-motion`), tudo fica instantâneo e os loops param.
 
 ---
 

@@ -42,7 +42,17 @@
   --r-btn:3px;
   --r-tag:2px;
   --dur-press:80ms;
-  --ease-press:ease-out;
+  --dur-color:120ms;
+  --dur-exit:120ms;
+  --dur-enter:180ms;
+  --dur-bounce:320ms;
+  --dur-fill:320ms;
+  --dur-loader:900ms;
+  --dur-skeleton:1200ms;
+  --ease-out:ease-out;
+  --ease-in:ease-in;
+  --ease-bounce:cubic-bezier(0.2, 1.25, 0.4, 1);
+  --move:8px;
   --f-display:'Bricolage Grotesque', 'Inter', system-ui, sans-serif;
   --w-display:800;
   --f-accent:'Instrument Serif', Georgia, 'Times New Roman', serif;
