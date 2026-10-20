@@ -661,6 +661,41 @@ footer{padding-block:48px 64px;color:var(--muted);font-size:13px}
 .tt-b::after{content:"";position:absolute;left:50%;top:100%;width:8px;height:8px;background:var(--ink);transform:translate(-50%,-50%) rotate(45deg)}
 .tt:hover .tt-b,.tt:focus-within .tt-b,.tt.show .tt-b{opacity:1}
 
+/* ───────── formulários ───────── */
+.input.open{box-shadow:var(--sh) var(--sh) 0 var(--violet)}
+.input button.val{border:0;background:transparent;text-align:left;cursor:pointer;font:inherit}
+.input .trail-btn{display:grid;place-items:center;width:46px;flex:none;border:0;border-left:var(--bw) solid var(--ink);background:var(--paper);cursor:pointer;color:var(--ink)}
+.input .trail-btn:focus-visible{outline:3px solid var(--blue);outline-offset:-5px}
+.menu{list-style:none;margin:8px 0 0;padding:4px;background:var(--card);border:var(--bw) solid var(--ink);border-radius:var(--r-ctl);box-shadow:4px 4px 0 var(--ink)}
+.menu[hidden]{display:none}
+.mi{display:flex;align-items:center;gap:10px;min-height:44px;padding:0 10px;border-radius:2px;font-size:15px;cursor:pointer}
+.mi:hover,.mi:focus-visible{background:var(--violet-soft);outline:0}
+.mi[aria-selected="true"]{font-weight:600}
+.mi .i-ok{margin-left:auto;opacity:0}
+.mi[aria-selected="true"] .i-ok{opacity:1}
+.mi small+.i-ok{margin-left:10px}
+.mi small{margin-left:auto;font:500 11px/1 var(--f-label);color:var(--muted)}
+.menu-g{padding:10px 10px 4px}
+.menu-sep{height:0;margin:4px 6px;border-top:1.5px dashed rgba(26,28,39,.3)}
+.mi.danger .i{color:var(--red)}
+.drop{display:flex;flex-direction:column;align-items:center;gap:8px;width:100%;padding:20px 16px;border:var(--bw) dashed var(--ink);border-radius:var(--r-card);background:var(--card);text-align:center;font:inherit;color:inherit;cursor:pointer;transition:background-color .12s}
+.drop:hover{background:var(--violet-soft)}
+.drop:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.drop b{font-weight:600;font-size:15px}
+.drop small{font-size:12.5px;color:var(--muted)}
+.drop.sm{flex-direction:row;justify-content:center;padding:12px}
+.upl{display:flex;gap:12px;align-items:center;padding:10px;background:var(--card);border:var(--bw) solid var(--ink);border-radius:var(--r-card)}
+.upl-m{flex:1;min-width:0;display:flex;flex-direction:column;gap:5px}
+.upl-m b{font-weight:600;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.upl-m small{font-size:12.5px;color:var(--muted);line-height:1.3}
+.upl .bar{height:10px}
+.upl.is-error{box-shadow:var(--sh) var(--sh) 0 var(--red)}
+.reqs{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px;font-size:13px}
+.reqs li{display:flex;align-items:center;gap:7px}
+.reqs li.no{color:var(--muted)}
+.reqs li.no .mini-ic{border-style:dashed;background:transparent}
+.reqs li.no .mini-ic .i{visibility:hidden}
+
 /* ───────── navegação ───────── */
 .toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
 .toc a{display:inline-flex;align-items:center;padding:7px 12px;border:var(--bw) solid var(--ink);border-radius:var(--r-btn);background:var(--card);box-shadow:var(--sh) var(--sh) 0 var(--ink);color:var(--ink);font:700 11px/1.2 var(--f-label);letter-spacing:.06em;text-transform:uppercase;text-decoration:none;transition:transform var(--dur-press) var(--ease-press),box-shadow var(--dur-press) var(--ease-press)}
@@ -729,6 +764,9 @@ section[id]{scroll-margin-top:130px}
   <symbol id="i-bell" viewBox="0 0 24 24"><path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/><path d="M10.3 21a1.9 1.9 0 0 0 3.4 0"/></symbol>
   <symbol id="i-alert" viewBox="0 0 24 24"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/><path d="M12 9v4M12 17h.01"/></symbol>
   <symbol id="i-wifi-off" viewBox="0 0 24 24"><path d="m2 2 20 20M8.5 16.4a5 5 0 0 1 7 0M2 8.8a15 15 0 0 1 4.2-2.7M10.7 5.1A15 15 0 0 1 22 8.8M5 12.9a10 10 0 0 1 5.2-2.8M16.9 12.4a10 10 0 0 1 2.1 1.5M12 20h.01"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></symbol>
+  <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M9.9 4.2A10 10 0 0 1 12 4c6.4 0 10 8 10 8a17 17 0 0 1-2.2 3.2M6.6 6.6A17 17 0 0 0 2 12s3.6 8 10 8a9.7 9.7 0 0 0 5.4-1.6"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2M2 2l20 20"/></symbol>
+  <symbol id="i-more" viewBox="0 0 24 24"><circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/></symbol>
   <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
 </svg>
 
@@ -747,7 +785,7 @@ section[id]{scroll-margin-top:130px}
     </div>
   </div>
     <nav class="toc" aria-label="Seções">
-      <a href="#telas">Telas</a><a href="#tokens">Tokens</a><a href="#componentes">Componentes</a><a href="#feedback">Feedback e estados</a><a href="#regras">Regras</a><a href="#logo">Marca</a><a href="https://github.com/Educt-app/educt-neo" target="_blank" rel="noopener">Repo ↗</a>
+      <a href="#telas">Telas</a><a href="#tokens">Tokens</a><a href="#componentes">Componentes</a><a href="#feedback">Feedback e estados</a><a href="#formularios">Formulários</a><a href="#regras">Regras</a><a href="#logo">Marca</a><a href="https://github.com/Educt-app/educt-neo" target="_blank" rel="noopener">Repo ↗</a>
     </nav>
 </header>
 
@@ -1345,7 +1383,7 @@ section[id]{scroll-margin-top:130px}
             <div class="field">
               <label class="label muted" for="fb-code">Código da turma</label>
               <div class="input"><span class="cell"><svg class="i"><use href="#i-hash"/></svg></span><input id="fb-code" placeholder="MS-52561"></div>
-              <span class="hint">Seu professor passa o código na primeira aula.</span>
+              <span class="hint">Texto de ajuda, quando precisar.</span>
             </div>
             <div class="field">
               <label class="label muted" for="fb-code-e">Código da turma</label>
@@ -1355,18 +1393,18 @@ section[id]{scroll-margin-top:130px}
             <div class="field">
               <label class="label muted" for="fb-code-o">Código da turma</label>
               <div class="input is-ok"><span class="cell"><svg class="i"><use href="#i-hash"/></svg></span><input id="fb-code-o" value="MS-52561"></div>
-              <span class="hint is-ok"><span class="mini-ic" style="--c:var(--mint)"><svg class="i"><use href="#i-check"/></svg></span>3º ano B · Prof. Marina</span>
+              <span class="hint is-ok"><span class="mini-ic" style="--c:var(--mint)"><svg class="i"><use href="#i-check"/></svg></span>Código válido.</span>
             </div>
             <div class="field">
               <label class="label muted" for="fb-code-d">Código da turma</label>
               <div class="input is-off"><span class="cell"><svg class="i"><use href="#i-lock"/></svg></span><input id="fb-code-d" value="MS-52561" disabled></div>
-              <span class="hint">Você já está nessa turma.</span>
+              <span class="hint">Campo bloqueado: diga por quê.</span>
             </div>
           </div>
           <div class="field">
-            <div class="field-top"><label class="label muted" for="fb-essay">Sua redação</label><span class="counter over tnum">31 / 30 linhas</span></div>
+            <div class="field-top"><label class="label muted" for="fb-essay">Texto com limite</label><span class="counter over tnum">320 / 300 caracteres</span></div>
             <textarea class="textarea" id="fb-essay" rows="3" aria-describedby="fb-essay-h">O Brasil ocupa uma posição paradoxal no cenário mundial: é um dos maiores produtores agrícolas do planeta e, ao mesmo tempo, desperdiça boa parte do que produz.</textarea>
-            <span class="hint is-err" id="fb-essay-h"><span class="mini-ic" style="--c:var(--red)"><svg class="i"><use href="#i-x"/></svg></span>Passou uma linha do limite do ENEM. Corte uma frase da conclusão antes de enviar.</span>
+            <span class="hint is-err" id="fb-essay-h"><span class="mini-ic" style="--c:var(--red)"><svg class="i"><use href="#i-x"/></svg></span>Passou do limite. Corte 20 caracteres.</span>
           </div>
         </div>
       </div>
@@ -1374,8 +1412,8 @@ section[id]{scroll-margin-top:130px}
       <div class="spec">
         <div class="spec-h"><span class="label">Toast · some em 4 s</span><span class="label">acima da barra de abas</span></div>
         <div class="spec-b">
-          <div class="toast" role="status"><span class="ic-box" style="--c:var(--mint)"><svg class="i"><use href="#i-check"/></svg></span><span class="toast-t">Redação enviada. A nota chega em até 2 minutos.</span><button class="toast-a" type="button">Ver</button></div>
-          <div class="toast" role="alert"><span class="ic-box" style="--c:var(--red)"><svg class="i"><use href="#i-wifi-off"/></svg></span><span class="toast-t"><b>Não deu para enviar.</b>Sua redação ficou salva no rascunho.</span><button class="toast-a" type="button">Tentar de novo</button></div>
+          <div class="toast" role="status"><span class="ic-box" style="--c:var(--mint)"><svg class="i"><use href="#i-check"/></svg></span><span class="toast-t">Alterações salvas.</span><button class="toast-a" type="button">Ver</button></div>
+          <div class="toast" role="alert"><span class="ic-box" style="--c:var(--red)"><svg class="i"><use href="#i-wifi-off"/></svg></span><span class="toast-t"><b>Não deu para salvar.</b>Verifique a conexão.</span><button class="toast-a" type="button">Tentar de novo</button></div>
           <div class="toast" role="status"><span class="ic-box" style="--c:var(--yellow)"><svg class="i"><use href="#i-bookmark"/></svg></span><span class="toast-t">Salvo no caderno.</span><button class="toast-a" type="button">Desfazer</button><span class="close-sq" aria-label="Fechar"><svg class="i i-sm"><use href="#i-x"/></svg></span></div>
           <div class="rowwrap">
             <button class="btn btn-sm" type="button" data-toast="ok">Testar sucesso</button>
@@ -1387,9 +1425,9 @@ section[id]{scroll-margin-top:130px}
       <div class="spec">
         <div class="spec-h"><span class="label">Banner · topo da tela</span><span class="label">fica até resolver</span></div>
         <div class="spec-b">
-          <div class="banner hazard" role="status" style="--c:var(--yellow)"><svg class="i"><use href="#i-wifi-off"/></svg><span class="banner-t"><b>Sem conexão.</b> Você pode escrever; a gente envia quando a internet voltar.</span></div>
-          <div class="banner" style="--c:var(--blue-soft)"><svg class="i"><use href="#i-clock"/></svg><span class="banner-t">Seu PRO acaba em <b>3 dias</b>.</span><button class="btn btn-sm" type="button">Renovar</button></div>
-          <div class="banner" role="alert" style="--c:var(--red-soft)"><svg class="i"><use href="#i-alert"/></svg><span class="banner-t"><b>A correção falhou.</b> Não foi culpa sua: tente de novo em instantes.</span><button class="btn btn-sm" type="button">Tentar</button></div>
+          <div class="banner hazard" role="status" style="--c:var(--yellow)"><svg class="i"><use href="#i-wifi-off"/></svg><span class="banner-t"><b>Sem conexão.</b> Algumas ações ficam indisponíveis até a internet voltar.</span></div>
+          <div class="banner" style="--c:var(--blue-soft)"><svg class="i"><use href="#i-clock"/></svg><span class="banner-t"><b>Aviso informativo</b> que fica até ser resolvido.</span><button class="btn btn-sm" type="button">Ação</button></div>
+          <div class="banner" role="alert" style="--c:var(--red-soft)"><svg class="i"><use href="#i-alert"/></svg><span class="banner-t"><b>Algo deu errado.</b> Não foi culpa sua: tente de novo em instantes.</span><button class="btn btn-sm" type="button">Tentar</button></div>
         </div>
       </div>
 
@@ -1400,8 +1438,8 @@ section[id]{scroll-margin-top:130px}
             <article class="win dialog" role="alertdialog" aria-labelledby="dlg-t" aria-describedby="dlg-d">
               <div class="win-bar bar-red"><span class="label">Excluir</span><span class="close-sq" aria-label="Fechar"><svg class="i i-sm"><use href="#i-x"/></svg></span></div>
               <div class="win-body">
-                <h4 id="dlg-t">Excluir esta redação?</h4>
-                <p id="dlg-d">A nota 6.8 e os 7 comentários somem junto. Isso não dá para desfazer.</p>
+                <h4 id="dlg-t">Excluir este item?</h4>
+                <p id="dlg-d">Diga o que se perde junto. Isso não dá para desfazer.</p>
                 <div class="dlg-actions">
                   <button class="btn" type="button">Cancelar</button>
                   <button class="btn btn-danger" type="button"><svg class="i i-sm"><use href="#i-trash"/></svg>Excluir</button>
@@ -1419,11 +1457,11 @@ section[id]{scroll-margin-top:130px}
             <button class="btn btn-icon btn-sm bell" type="button" aria-label="Notificações, 2 novas"><svg class="i"><use href="#i-bell"/></svg><span class="count">2</span></button></div>
           <div class="ntfs">
             <div class="ntf-g label muted">Hoje</div>
-            <div class="ntf new"><span class="ic-box" style="--c:var(--mint)"><svg class="i"><use href="#i-check"/></svg></span><div class="ntf-m"><b>Sua redação foi corrigida</b><span>Nota 6.8 em “A literatura de ficção…”. Veja o que subir na C5.</span><span class="ntf-time">há 4 min</span></div></div>
-            <div class="ntf new"><span class="ic-box" style="--c:var(--violet-soft)"><svg class="i"><use href="#i-message"/></svg></span><div class="ntf-m"><b>Prof. Marina comentou</b><span>“Boa introdução. Cuidado com a repetição de ‘portanto’.”</span><span class="ntf-time">há 1 h</span></div></div>
+            <div class="ntf new"><span class="ic-box" style="--c:var(--mint)"><svg class="i"><use href="#i-check"/></svg></span><div class="ntf-m"><b>Título da notificação</b><span>Texto de apoio em uma ou duas linhas.</span><span class="ntf-time">há 4 min</span></div></div>
+            <div class="ntf new"><span class="ic-box" style="--c:var(--violet-soft)"><svg class="i"><use href="#i-message"/></svg></span><div class="ntf-m"><b>Nova, não lida</b><span>A bolinha coral marca o que ainda não foi visto.</span><span class="ntf-time">há 1 h</span></div></div>
             <div class="ntf-g label muted">Esta semana</div>
-            <div class="ntf read"><span class="ic-box" style="--c:var(--coral-soft)"><svg class="i"><use href="#i-flame"/></svg></span><div class="ntf-m"><b>Sua sequência está em risco</b><span>Escreva até domingo para manter 1 semana.</span><span class="ntf-time">seg</span></div></div>
-            <div class="ntf read"><span class="ic-box" style="--c:var(--silver)"><svg class="i"><use href="#i-trophy"/></svg></span><div class="ntf-m"><b>Conquista: Nota 800+</b><span>Você desbloqueou um adesivo prata.</span><span class="ntf-time">dom</span></div></div>
+            <div class="ntf read"><span class="ic-box" style="--c:var(--coral-soft)"><svg class="i"><use href="#i-flame"/></svg></span><div class="ntf-m"><b>Já lida</b><span>O texto de apoio fica grafite.</span><span class="ntf-time">seg</span></div></div>
+            <div class="ntf read"><span class="ic-box" style="--c:var(--silver)"><svg class="i"><use href="#i-trophy"/></svg></span><div class="ntf-m"><b>Já lida</b><span>O ícone indica o tipo; a cor vem da paleta.</span><span class="ntf-time">dom</span></div></div>
           </div>
         </div>
       </div>
@@ -1434,13 +1472,13 @@ section[id]{scroll-margin-top:130px}
           <div class="row" style="gap:14px"><span class="loader" role="status" aria-label="Carregando"><i style="--c:var(--blue)"></i><i style="--c:var(--violet)"></i><i style="--c:var(--coral)"></i></span><span class="muted" style="font-size:14px">Loader da marca, para esperas curtas</span></div>
           <div class="skel-row" aria-hidden="true"><span class="skel" style="width:64px;height:64px"></span><span class="skel-lines"><span class="skel" style="width:70%;height:14px"></span><span class="skel" style="width:45%;height:11px"></span><span class="skel" style="width:30%;height:11px"></span></span></div>
           <article class="win">
-            <div class="win-bar bar-yellow"><span class="label">Corrigindo · 1 min</span><span class="loader" style="height:14px;gap:4px" aria-hidden="true"><i style="--c:var(--card);width:8px;height:8px;border-width:1.5px"></i><i style="--c:var(--card);width:8px;height:8px;border-width:1.5px"></i><i style="--c:var(--card);width:8px;height:8px;border-width:1.5px"></i></span></div>
+            <div class="win-bar bar-yellow"><span class="label">Etapas</span><span class="loader" style="height:14px;gap:4px" aria-hidden="true"><i style="--c:var(--card);width:8px;height:8px;border-width:1.5px"></i><i style="--c:var(--card);width:8px;height:8px;border-width:1.5px"></i><i style="--c:var(--card);width:8px;height:8px;border-width:1.5px"></i></span></div>
             <div class="win-body" style="padding:6px 14px">
               <ol class="steps">
-                <li class="done"><span class="st-sq"><svg class="i"><use href="#i-check"/></svg></span>Lendo a redação<span>ok</span></li>
-                <li class="done"><span class="st-sq"><svg class="i"><use href="#i-check"/></svg></span>Critérios 1 a 3<span>ok</span></li>
-                <li class="now"><span class="st-sq"></span>Critério 4 · coesão<span>agora</span></li>
-                <li class="next"><span class="st-sq"></span>Critério 5 e comentários<span></span></li>
+                <li class="done"><span class="st-sq"><svg class="i"><use href="#i-check"/></svg></span>Etapa concluída<span>ok</span></li>
+                <li class="done"><span class="st-sq"><svg class="i"><use href="#i-check"/></svg></span>Etapa concluída<span>ok</span></li>
+                <li class="now"><span class="st-sq"></span>Etapa atual<span>agora</span></li>
+                <li class="next"><span class="st-sq"></span>Próxima etapa<span></span></li>
               </ol>
             </div>
           </article>
@@ -1452,10 +1490,10 @@ section[id]{scroll-margin-top:130px}
         <div class="spec-b">
           <div class="ctl-grid">
             <fieldset class="ctl-col" style="border:0;margin:0;padding:0"><legend class="label muted" style="margin-bottom:12px">Checkbox</legend>
-              <label class="chk"><input type="checkbox" checked><span class="bx"><svg class="i"><use href="#i-check"/></svg></span>Mostrar comentários no texto</label>
-              <label class="chk"><input type="checkbox"><span class="bx"><svg class="i"><use href="#i-check"/></svg></span>Receber dicas por e-mail</label>
-              <label class="chk"><input type="checkbox" id="fb-ind"><span class="bx"><svg class="i"><use href="#i-check"/></svg></span>Todas as turmas</label>
-              <label class="chk"><input type="checkbox" disabled><span class="bx"><svg class="i"><use href="#i-check"/></svg></span>Correção humana (em breve)</label>
+              <label class="chk"><input type="checkbox" checked><span class="bx"><svg class="i"><use href="#i-check"/></svg></span>Opção marcada</label>
+              <label class="chk"><input type="checkbox"><span class="bx"><svg class="i"><use href="#i-check"/></svg></span>Opção desmarcada</label>
+              <label class="chk"><input type="checkbox" id="fb-ind"><span class="bx"><svg class="i"><use href="#i-check"/></svg></span>Grupo parcialmente marcado</label>
+              <label class="chk"><input type="checkbox" disabled><span class="bx"><svg class="i"><use href="#i-check"/></svg></span>Opção desabilitada</label>
             </fieldset>
             <fieldset class="ctl-col" style="border:0;margin:0;padding:0"><legend class="label muted" style="margin-bottom:12px">Radio</legend>
               <label class="chk radio"><input type="radio" name="fb-model" checked><span class="bx"></span>ENEM</label>
@@ -1463,14 +1501,84 @@ section[id]{scroll-margin-top:130px}
               <label class="chk radio"><input type="radio" name="fb-model"><span class="bx"></span>Fuvest</label>
             </fieldset>
             <div class="ctl-col"><span class="label muted">Switch</span>
-              <label class="switch">Lembrete de sequência<input type="checkbox" role="switch" checked><span class="trk"></span></label>
-              <label class="switch">Sons do app<input type="checkbox" role="switch"><span class="trk"></span></label>
+              <label class="switch">Ligado<input type="checkbox" role="switch" checked><span class="trk"></span></label>
+              <label class="switch">Desligado<input type="checkbox" role="switch"><span class="trk"></span></label>
               <span class="label muted" style="margin-top:8px">Tooltip</span>
               <div class="row" style="gap:10px;padding-top:34px">
                 <span class="tt show"><button class="btn btn-icon btn-sm" type="button" aria-label="Como a nota é calculada" aria-describedby="fb-tt"><svg class="i"><use href="#i-info"/></svg></button><span class="tt-b" role="tooltip" id="fb-tt">Soma dos 5 critérios</span></span>
                 <span class="muted" style="font-size:13px">Só para explicar, nunca para esconder ação.</span>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="sec" id="formularios" aria-labelledby="form-h">
+    <div class="sec-head">
+      <h2 id="form-h">Formulários</h2>
+      <p>Toda linha clicável tem 44px de altura, e o que está aberto ganha a sombra violeta do foco.</p>
+    </div>
+    <div class="specs">
+
+      <div class="spec">
+        <div class="spec-h"><span class="label">Select</span><span class="label">clique para abrir</span></div>
+        <div class="spec-b">
+          <div class="field">
+            <span class="label muted" id="sel-l">Modelo de correção</span>
+            <div class="input open" id="sel-t"><button class="val" type="button" aria-haspopup="listbox" aria-expanded="true" aria-labelledby="sel-l sel-v"><span id="sel-v">ENEM</span></button><span class="trail"><svg class="i i-sm"><use href="#i-down"/></svg></span></div>
+            <ul class="menu" role="listbox" id="sel-m" aria-labelledby="sel-l">
+              <li class="menu-g label muted" role="presentation">Nacionais</li>
+              <li class="mi" role="option" tabindex="-1" aria-selected="true">ENEM<small>0–1000</small><svg class="i i-sm i-ok"><use href="#i-check"/></svg></li>
+              <li class="menu-g label muted" role="presentation">Vestibulares</li>
+              <li class="mi" role="option" tabindex="-1" aria-selected="false">UEMA<small>0–10</small><svg class="i i-sm i-ok"><use href="#i-check"/></svg></li>
+              <li class="mi" role="option" tabindex="-1" aria-selected="false">Fuvest<small>0–50</small><svg class="i i-sm i-ok"><use href="#i-check"/></svg></li>
+              <li class="mi" role="option" tabindex="-1" aria-selected="false">UEPG<small>0–10</small><svg class="i i-sm i-ok"><use href="#i-check"/></svg></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec">
+        <div class="spec-h"><span class="label">Menu de ações</span><span class="label">destrutivo por último</span></div>
+        <div class="spec-b">
+          <div class="row between"><b style="font-size:14.5px">Item da lista</b><button class="btn btn-icon btn-sm" type="button" aria-label="Mais ações" aria-haspopup="menu" aria-expanded="true"><svg class="i"><use href="#i-more"/></svg></button></div>
+          <ul class="menu" role="menu" style="margin-top:0">
+            <li class="mi" role="menuitem" tabindex="-1"><svg class="i"><use href="#i-pen"/></svg>Editar</li>
+            <li class="mi" role="menuitem" tabindex="-1"><svg class="i"><use href="#i-copy"/></svg>Duplicar</li>
+            <li class="mi" role="menuitem" tabindex="-1"><svg class="i"><use href="#i-share"/></svg>Compartilhar</li>
+            <li class="menu-sep" role="separator"></li>
+            <li class="mi danger" role="menuitem" tabindex="-1"><svg class="i"><use href="#i-trash"/></svg>Excluir</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="spec">
+        <div class="spec-h"><span class="label">Senha</span><span class="label">mostrar · requisitos ao vivo</span></div>
+        <div class="spec-b">
+          <div class="field">
+            <label class="label muted" for="pw">Nova senha</label>
+            <div class="input"><span class="cell"><svg class="i"><use href="#i-key"/></svg></span><input id="pw" type="password" value="redacao2" autocomplete="new-password" aria-describedby="pw-r"><button class="trail-btn" type="button" id="pw-eye" aria-label="Mostrar senha" aria-pressed="false"><svg class="i"><use href="#i-eye"/></svg></button></div>
+            <ul class="reqs" id="pw-r" aria-live="polite">
+              <li data-r="len"><span class="mini-ic" style="--c:var(--mint)"><svg class="i"><use href="#i-check"/></svg></span>8 caracteres ou mais</li>
+              <li data-r="num"><span class="mini-ic" style="--c:var(--mint)"><svg class="i"><use href="#i-check"/></svg></span>Pelo menos um número</li>
+              <li data-r="up"><span class="mini-ic" style="--c:var(--mint)"><svg class="i"><use href="#i-check"/></svg></span>Uma letra maiúscula</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="spec wide">
+        <div class="spec-h"><span class="label">Upload de arquivo</span><span class="label">vazio · enviando · pronto · erro</span></div>
+        <div class="spec-b">
+          <div class="forms">
+            <button class="drop" type="button"><span class="ic-box" style="--c:var(--violet-soft)"><svg class="i"><use href="#i-image"/></svg></span><b>Escolher arquivo</b><small>Ou arraste até aqui · JPG ou PNG até 10 MB</small></button>
+            <div class="upl"><span class="ic-box"><svg class="i"><use href="#i-image"/></svg></span><div class="upl-m"><b>arquivo.jpg</b><small class="tnum">Enviando · 64%</small><div class="bar" style="--c:var(--blue)" role="progressbar" aria-valuenow="64" aria-valuemin="0" aria-valuemax="100" aria-label="Enviando arquivo.jpg"><i style="width:64%"></i></div></div></div>
+            <div class="upl"><span class="ic-box"><svg class="i"><use href="#i-image"/></svg></span><div class="upl-m"><b>arquivo.jpg</b><small>2,4 MB</small><span class="tags"><span class="tag tag-mint"><svg class="i i-sm"><use href="#i-check"/></svg>Enviado</span></span></div><button class="btn btn-icon btn-sm" type="button" aria-label="Remover arquivo"><svg class="i"><use href="#i-x"/></svg></button></div>
+            <div class="field"><div class="upl is-error"><span class="ic-box"><svg class="i"><use href="#i-image"/></svg></span><div class="upl-m"><b>foto-grande.png</b><small>14 MB</small></div><button class="btn btn-icon btn-sm" type="button" aria-label="Escolher outro arquivo"><svg class="i"><use href="#i-redo"/></svg></button></div>
+              <span class="hint is-err"><span class="mini-ic" style="--c:var(--red)"><svg class="i"><use href="#i-x"/></svg></span>Arquivo maior que 10 MB. Escolha um menor.</span></div>
           </div>
         </div>
       </div>
@@ -1935,8 +2043,8 @@ section[id]{scroll-margin-top:130px}
 (function(){
   const ind=document.getElementById('fb-ind'); if(ind)ind.indeterminate=true;
   const box=document.createElement('div');box.className='toasts';document.body.appendChild(box);
-  const T={ok:['var(--mint)','check','Redação enviada. A nota chega em até 2 minutos.','Ver','status'],
-           err:['var(--red)','wifi-off','<b>Não deu para enviar.</b>Sua redação ficou salva no rascunho.','Tentar de novo','alert']};
+  const T={ok:['var(--mint)','check','Alterações salvas.','Ver','status'],
+           err:['var(--red)','wifi-off','<b>Não deu para salvar.</b>Verifique a conexão.','Tentar de novo','alert']};
   function show(k){
     const t=T[k], el=document.createElement('div');
     el.className='toast';el.setAttribute('role',t[4]);
@@ -1966,5 +2074,25 @@ section[id]{scroll-margin-top:130px}
     sw.addEventListener('click',copy);
     sw.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();copy();}});
   });
+})();
+</script>
+<script>
+/* ── Formulários: select e senha ── */
+(function(){
+  const t=document.getElementById('sel-t'), m=document.getElementById('sel-m'); if(!t||!m)return;
+  const btn=t.querySelector('button'), v=document.getElementById('sel-v');
+  const setOpen=o=>{m.hidden=!o;t.classList.toggle('open',o);btn.setAttribute('aria-expanded',o);};
+  btn.addEventListener('click',()=>setOpen(m.hidden));
+  m.addEventListener('click',e=>{const o=e.target.closest('.mi');if(!o)return;
+    m.querySelectorAll('.mi').forEach(x=>x.setAttribute('aria-selected',x===o?'true':'false'));
+    v.textContent=o.firstChild.textContent.trim();setOpen(false);btn.focus();});
+  const pw=document.getElementById('pw'), eye=document.getElementById('pw-eye'), reqs=document.getElementById('pw-r');
+  if(!pw)return;
+  const R={len:s=>s.length>=8,num:s=>/\d/.test(s),up:s=>/[A-ZÀ-Ý]/.test(s)};
+  function check(){reqs.querySelectorAll('li').forEach(li=>{const ok=R[li.dataset.r](pw.value);li.classList.toggle('no',!ok);});}
+  pw.addEventListener('input',check);check();
+  eye.addEventListener('click',()=>{const show=pw.type==='password';pw.type=show?'text':'password';
+    eye.setAttribute('aria-pressed',show);eye.setAttribute('aria-label',show?'Esconder senha':'Mostrar senha');
+    eye.querySelector('use').setAttribute('href',show?'#i-eye-off':'#i-eye');});
 })();
 </script>

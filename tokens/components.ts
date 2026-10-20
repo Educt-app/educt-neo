@@ -297,7 +297,7 @@ export const skeleton = {
   container: { border: `${borderWidth.base}px dashed ${border.divider}` },
 } as const;
 
-/** Steps of a long task (essay correction) */
+/** Steps of a long task */
 export const steps = {
   marker: { size: 22, borderRadius: radii.xs },
   done: { background: accent.mint },
@@ -343,4 +343,56 @@ export const tooltip = {
   fontSize: 12.5,
   arrow: 8,
   offset: 10,
+} as const;
+
+// ── Forms ──────────────────────────────────────────────────────
+
+/** Dropdown list for select and action menus. Open trigger gets the violet focus shadow. */
+export const menu = {
+  background: surface.card,
+  border: borderStyle.solid,
+  borderRadius: radii.base,
+  boxShadow: shadowCSS.md,
+  padding: spacing[1],
+  offset: spacing[2],
+  item: { minHeight: 44, paddingHorizontal: spacing[2.5], fontSize: fontSize.base, hoverBackground: primary[100] },
+  /** Selected option: semibold + check on the right */
+  selected: { fontWeight: fontWeight.semibold },
+  groupLabel: { fontSize: 11, color: surface.mutedForeground },
+  separator: borderStyle.divider,
+  /** Destructive item goes last, after a separator, with a red icon */
+  destructive: { iconColor: accent.red },
+} as const;
+
+export const select = {
+  trigger: { ...input, open: { boxShadow: shadowCSS.inputFocus } },
+  menu,
+} as const;
+
+/** Drop zone and file rows */
+export const upload = {
+  dropzone: {
+    border: borderStyle.dashed,
+    borderRadius: radii.base,
+    background: surface.card,
+    hoverBackground: primary[100],
+    padding: spacing[5],
+  },
+  file: {
+    border: borderStyle.solid,
+    borderRadius: radii.base,
+    padding: spacing[2.5],
+    progress: { height: 10, fill: blue[400] },
+    error: { boxShadow: `${SHADOW}px ${SHADOW}px 0 ${accent.red}` },
+  },
+} as const;
+
+/** Password field: show/hide button in a trailing cell, live requirement list */
+export const password = {
+  toggle: { width: 46, background: paper.peach, borderLeft: borderStyle.solid },
+  requirement: {
+    fontSize: fontSize.sm,
+    met: { iconBackground: accent.mint, color: ink },
+    unmet: { iconBorder: 'dashed', color: surface.mutedForeground },
+  },
 } as const;

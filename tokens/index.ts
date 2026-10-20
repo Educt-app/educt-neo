@@ -78,4 +78,8 @@ export {
   radio,
   toggle,
   tooltip,
+  menu,
+  select,
+  upload,
+  password,
 } from './components';

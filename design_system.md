@@ -149,13 +149,13 @@ Os tokens ficam em [`tokens/components.ts`](tokens/components.ts), e os exemplos
 |---|---|---|
 | Confirmação de uma ação ("Salvo no caderno") | **Toast** (`toast`) | Sim, em 4s. Tem ação opcional ("Desfazer"). |
 | Falha de uma ação que dá para repetir | **Toast de erro** | Sim. A ação é "Tentar de novo" e usa `role="alert"`. |
-| Estado que continua até ser resolvido (sem conexão, plano acabando, correção falhou) | **Banner** (`banner`), no topo da tela | Não |
-| Ação que não tem volta (excluir redação, sair da turma) | **Diálogo** (`dialog`) | Não. Exige escolha. |
+| Estado que continua até ser resolvido (sem conexão, erro do servidor) | **Banner** (`banner`), no topo da tela | Não |
+| Ação que não tem volta (excluir, sair) | **Diálogo** (`dialog`) | Não. Exige escolha. |
 | Explicação de um termo ou número | **Tooltip** (`tooltip`) | Ao tirar o foco |
 
 - **Toast:** cartão com ícone colorido e sombra de 4px. Fica acima da barra de abas, um de cada vez.
-- **Banner de sem conexão:** amarelo, com a faixa listrada de obra na borda esquerda. Diz o que continua funcionando ("Você pode escrever; a gente envia quando a internet voltar").
-- **Diálogo:** a barra fica vermelha quando a ação é destrutiva. O texto diz o que se perde ("A nota 6.8 e os 7 comentários somem junto"). Cancelar fica à esquerda e a ação à direita, com um verbo ("Excluir", não "Sim"). O fundo escurece com tinta a 45%.
+- **Banner de sem conexão:** amarelo, com a faixa listrada de obra na borda esquerda. Diz o que fica indisponível até a conexão voltar.
+- **Diálogo:** a barra fica vermelha quando a ação é destrutiva. O texto diz o que se perde junto. Cancelar fica à esquerda e a ação à direita, com um verbo ("Excluir", não "Sim"). O fundo escurece com tinta a 45%.
 - **Tooltip:** só explica. Nunca esconda uma ação dentro dele.
 
 ### Notificações (`notification`)
@@ -163,11 +163,7 @@ Os tokens ficam em [`tokens/components.ts`](tokens/components.ts), e os exemplos
 - Agrupadas por período ("Hoje", "Esta semana").
 - A nova tem uma **bolinha coral** à direita. O fundo da linha não muda.
 - A lida fica com o texto grafite.
-- O ícone indica o tipo:
-  - correção pronta: menta;
-  - comentário do professor: violeta claro;
-  - sequência: coral claro;
-  - conquista: cor do nível.
+- O ícone indica o tipo, num quadrado com uma cor da paleta.
 - O sino mostra um contador coral.
 
 ### Carregando (`loader`, `skeleton`, `steps`)
@@ -175,13 +171,27 @@ Os tokens ficam em [`tokens/components.ts`](tokens/components.ts), e os exemplos
 - **Até 1s:** nada.
 - **Espera curta:** o loader da marca, três quadrados azul, violeta e coral pulando.
 - **Lista ou cartão:** skeleton com a forma do conteúdo, num contêiner tracejado.
-- **Tarefa longa, como a correção:** etapas. A concluída fica verde com check, a atual amarela e a próxima tracejada. Mostre o tempo estimado.
+- **Tarefa longa:** etapas. A concluída fica verde com check, a atual amarela e a próxima tracejada. Mostre o tempo estimado quando houver.
 
 ### Seleção (`checkbox`, `radio`, `toggle`)
 
 - **Marcado é violeta com marca branca.** O checkbox tem estado indeterminado, com um traço branco.
-- **Switch quadrado:** pino de tinta quando desligado; trilho violeta com pino branco quando ligado. Use para o que vale na hora, como um lembrete. Para o que precisa ser salvo, use checkbox.
+- **Switch quadrado:** pino de tinta quando desligado; trilho violeta com pino branco quando ligado. Use para o que vale na hora. Para o que precisa ser salvo, use checkbox.
 - **Área de toque:** mínima de 44px, mesmo quando o controle desenhado tem 22px.
+
+---
+
+## Formulários
+
+- **Linhas clicáveis:** 44px de altura em menus, listas e opções.
+- **Select (`select`, `menu`):** o campo aberto ganha a sombra violeta do foco. A lista abre logo abaixo, com sombra de 4px. Grupos têm rótulo mono. A opção escolhida fica semibold, com check à direita. Hover com fundo violeta claro.
+- **Menu de ações (`menu`):** a ação destrutiva fica por último, depois de um separador tracejado, com ícone vermelho.
+- **Upload (`upload`):**
+  - vazio: área tracejada com ícone, ação e limites ("JPG ou PNG até 10 MB");
+  - enviando: linha do arquivo com barra azul e porcentagem;
+  - pronto: tag verde e botão de remover;
+  - erro: sombra vermelha e dica do que fazer, como nos campos.
+- **Senha (`password`):** o botão de mostrar fica numa célula à direita, separado por uma linha de tinta. Os requisitos aparecem embaixo e são marcados enquanto a pessoa digita. Os que faltam ficam tracejados e em grafite.
 
 ---
 
