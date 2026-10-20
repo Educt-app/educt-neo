@@ -133,6 +133,9 @@ A Instrument Serif nunca vai em botões nem em formulários. O `fontImport` traz
 | teclado | duração do sistema |
 | tour | sem animação extra |
 
+- **Troca de aba:** o traço de marca-texto se desenha na aba nova em 120ms (cor), e o conteúdo novo entra em 180ms, subindo 8px. Vale para o seletor (segmentado) e para a barra de abas.
+- **Troca de página (pilha de telas):** abrir e voltar entre telas usa a transição nativa do sistema (empurrar no iOS, a do Material no Android). Não tem token e não deve ser recriada à mão.
+
 Com "reduzir movimento" ligado (`prefers-reduced-motion`), tudo fica instantâneo e os loops param.
 
 ---

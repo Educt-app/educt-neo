@@ -57,6 +57,7 @@ em.acc{font-family:var(--f-accent);font-style:italic;font-weight:400;letter-spac
 .seg label+label{border-left:var(--bw) solid var(--ink)}
 .seg input{position:absolute;opacity:0;inset:0;margin:0;cursor:pointer}
 .seg span{display:block;padding:7px 11px;font:700 10.5px/1.2 var(--f-label);letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.seg span{transition:background-color var(--dur-color) var(--ease-out)}
 .seg input:checked+span{background:var(--yellow)}
 .seg input:focus-visible+span{outline:2px solid var(--blue);outline-offset:-4px}
 .seg.seg-lg span{padding:10px 14px}
@@ -172,6 +173,10 @@ em.acc{font-family:var(--f-accent);font-style:italic;font-weight:400;letter-spac
 .tab{display:flex;flex-direction:column;align-items:center;gap:4px;font:600 10.5px/1 var(--f-body);color:var(--muted)}
 .tab.on{color:var(--ink)}
 .tab.on .i{stroke-width:2.4}
+.tab .lbl{padding:0 3px;margin:0 -3px;border-radius:3px;background:linear-gradient(transparent 38%,var(--yellow) 38% 88%,transparent 88%) no-repeat 0 0/0% 100%;transition:background-size var(--dur-color) var(--ease-out)}
+.tab.on .lbl{background-size:100% 100%}
+.tabbar.static .tab{cursor:pointer;border-radius:var(--r-ctl)}
+.tabbar.static .tab:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
 .fab{justify-self:center;width:62px;height:62px;margin-top:-34px;border-radius:50%;background:var(--violet);border:var(--bw) solid var(--ink);box-shadow:var(--sh) var(--sh) 0 var(--ink);display:grid;place-items:center}
 .fab .i{width:26px;height:26px}
 
@@ -962,11 +967,11 @@ section[id]{scroll-margin-top:130px}
             </div>
           </div>
           <nav class="tabbar" aria-label="Navegação do app">
-            <span class="tab on"><svg class="i"><use href="#i-home"/></svg><span class="marker">Início</span></span>
-            <span class="tab"><svg class="i"><use href="#i-layers"/></svg>Repertórios</span>
+            <span class="tab on"><svg class="i"><use href="#i-home"/></svg><span class="lbl">Início</span></span>
+            <span class="tab"><svg class="i"><use href="#i-layers"/></svg><span class="lbl">Repertórios</span></span>
             <span class="fab"><svg class="i"><use href="#i-pen"/></svg></span>
-            <span class="tab"><svg class="i"><use href="#i-book"/></svg>Correções</span>
-            <span class="tab"><svg class="i"><use href="#i-user"/></svg>Perfil</span>
+            <span class="tab"><svg class="i"><use href="#i-book"/></svg><span class="lbl">Correções</span></span>
+            <span class="tab"><svg class="i"><use href="#i-user"/></svg><span class="lbl">Perfil</span></span>
           </nav></div>
           <figcaption><b>Início</b><span>seções com rótulo, um bloco de cor</span></figcaption>
         </figure>
@@ -1121,11 +1126,11 @@ section[id]{scroll-margin-top:130px}
             </div>
           </div>
           <nav class="tabbar" aria-label="Navegação do app">
-            <span class="tab"><svg class="i"><use href="#i-home"/></svg>Início</span>
-            <span class="tab"><svg class="i"><use href="#i-layers"/></svg>Repertórios</span>
+            <span class="tab"><svg class="i"><use href="#i-home"/></svg><span class="lbl">Início</span></span>
+            <span class="tab"><svg class="i"><use href="#i-layers"/></svg><span class="lbl">Repertórios</span></span>
             <span class="fab"><svg class="i"><use href="#i-pen"/></svg></span>
-            <span class="tab"><svg class="i"><use href="#i-book"/></svg>Correções</span>
-            <span class="tab on"><svg class="i"><use href="#i-user"/></svg><span class="marker">Perfil</span></span>
+            <span class="tab"><svg class="i"><use href="#i-book"/></svg><span class="lbl">Correções</span></span>
+            <span class="tab on"><svg class="i"><use href="#i-user"/></svg><span class="lbl">Perfil</span></span>
           </nav></div>
           <figcaption><b>Perfil</b><span>nível na barra da janela</span></figcaption>
         </figure>
@@ -1165,11 +1170,11 @@ section[id]{scroll-margin-top:130px}
             </div>
           </div>
           <nav class="tabbar" aria-label="Navegação do app">
-            <span class="tab"><svg class="i"><use href="#i-home"/></svg>Início</span>
-            <span class="tab"><svg class="i"><use href="#i-layers"/></svg>Repertórios</span>
+            <span class="tab"><svg class="i"><use href="#i-home"/></svg><span class="lbl">Início</span></span>
+            <span class="tab"><svg class="i"><use href="#i-layers"/></svg><span class="lbl">Repertórios</span></span>
             <span class="fab"><svg class="i"><use href="#i-pen"/></svg></span>
-            <span class="tab"><svg class="i"><use href="#i-book"/></svg>Correções</span>
-            <span class="tab on"><svg class="i"><use href="#i-user"/></svg><span class="marker">Perfil</span></span>
+            <span class="tab"><svg class="i"><use href="#i-book"/></svg><span class="lbl">Correções</span></span>
+            <span class="tab on"><svg class="i"><use href="#i-user"/></svg><span class="lbl">Perfil</span></span>
           </nav></div>
           <figcaption><b>Conquistas</b><span>desbloqueada vira adesivo torto</span></figcaption>
         </figure>
@@ -1411,14 +1416,14 @@ section[id]{scroll-margin-top:130px}
       </div>
 
       <div class="spec">
-        <div class="spec-h"><span class="label">Navegação</span><span class="label">aba ativa = marca-texto</span></div>
+        <div class="spec-h"><span class="label">Navegação</span><span class="label">clique numa aba · traço em 120ms</span></div>
         <div class="spec-b" style="align-items:center;padding-top:40px">
           <nav class="tabbar static" aria-label="Exemplo de navegação">
-            <span class="tab"><svg class="i"><use href="#i-home"/></svg>Início</span>
-            <span class="tab on"><svg class="i"><use href="#i-layers"/></svg><span class="marker">Repertórios</span></span>
+            <span class="tab"><svg class="i"><use href="#i-home"/></svg><span class="lbl">Início</span></span>
+            <span class="tab on"><svg class="i"><use href="#i-layers"/></svg><span class="lbl">Repertórios</span></span>
             <span class="fab"><svg class="i"><use href="#i-pen"/></svg></span>
-            <span class="tab"><svg class="i"><use href="#i-book"/></svg>Correções</span>
-            <span class="tab"><svg class="i"><use href="#i-user"/></svg>Perfil</span>
+            <span class="tab"><svg class="i"><use href="#i-book"/></svg><span class="lbl">Correções</span></span>
+            <span class="tab"><svg class="i"><use href="#i-user"/></svg><span class="lbl">Perfil</span></span>
           </nav>
         </div>
       </div>
@@ -1868,7 +1873,7 @@ section[id]{scroll-margin-top:130px}
       +'<div class="exp-list">'+EXPL.map(row).join('')+'<p class="rep-empty" hidden>Nada encontrado com essa busca.</p></div></div>'
       +'<div class="rv-view" data-v="caderno" hidden><div class="cad"></div></div>'
       +'</div></div>'
-      +'<nav class="tabbar" aria-label="Navegação do app"><span class="tab">'+ic('home')+'Início</span><span class="tab on">'+ic('layers')+'<span class="marker">Repertórios</span></span><span class="fab">'+ic('pen')+'</span><span class="tab">'+ic('book')+'Correções</span><span class="tab">'+ic('user')+'Perfil</span></nav>'
+      +'<nav class="tabbar" aria-label="Navegação do app"><span class="tab">'+ic('home')+'<span class="lbl">Início</span></span><span class="tab on">'+ic('layers')+'<span class="lbl">Repertórios</span></span><span class="fab">'+ic('pen')+'</span><span class="tab">'+ic('book')+'<span class="lbl">Correções</span></span><span class="tab">'+ic('user')+'<span class="lbl">Perfil</span></span></nav>'
       +'<div class="scrim"></div>'
       +'<article class="win dsheet" role="dialog" aria-modal="true" aria-label="Repertório">'
       +'<div class="win-bar dbar"><span class="label dlabel"></span><button class="close-sq dclose" type="button" aria-label="Fechar">'+ic('x','i i-sm')+'</button></div>'
@@ -2128,6 +2133,14 @@ section[id]{scroll-margin-top:130px}
 (function(){
   const ms=v=>parseFloat(getComputedStyle(document.documentElement).getPropertyValue(v))||0;
   const ind=document.getElementById('fb-ind'); if(ind)ind.indeterminate=true;
+  // barra de abas do componente: o traço muda de aba
+  document.querySelectorAll('.tabbar.static').forEach(bar=>{
+    const tabs=[...bar.querySelectorAll('.tab')];
+    bar.setAttribute('role','tablist');
+    tabs.forEach(t=>{t.setAttribute('role','tab');t.tabIndex=0;t.setAttribute('aria-selected',t.classList.contains('on'));
+      const pick=()=>tabs.forEach(x=>{x.classList.toggle('on',x===t);x.setAttribute('aria-selected',x===t);});
+      t.addEventListener('click',pick);t.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();pick();}});});
+  });
   const box=document.createElement('div');box.className='toasts';document.body.appendChild(box);
   const T={ok:['var(--mint)','check','Alterações salvas.','Ver','status'],
            err:['var(--red)','wifi-off','<b>Não deu para salvar.</b>Verifique a conexão.','Tentar de novo','alert']};
