@@ -4,13 +4,13 @@
 // References primitive tokens from sibling files.
 // ═══════════════════════════════════════════════════════════════
 
-import { ink, paper, primary, blue, coral, accent, semantic, surface, border, criteria } from './colors';
+import { ink, paper, primary, blue, coral, accent, semantic, surface, border, criteria, stripe } from './colors';
 import { spacing } from './spacing';
 import { radii } from './radii';
 import { borderWidth, borderStyle } from './borders';
 import { fontSize, fontWeight } from './typography';
 import { css as shadowCSS } from './shadows';
-import { press, pressOffset } from './motion';
+import { press, pressOffset, transition } from './motion';
 
 const SHADOW = 2;
 
@@ -72,6 +72,26 @@ export const input = {
   focus: { boxShadow: shadowCSS.inputFocus },
   /** Textarea is ruled like notebook paper */
   textarea: { lineHeight: 28, minHeight: 124, ruleColor: 'rgba(26, 28, 39, 0.12)' },
+  /** Validation keeps the ink border; only the shadow changes color */
+  states: {
+    error: { boxShadow: `${SHADOW}px ${SHADOW}px 0 ${accent.red}` },
+    success: { boxShadow: `${SHADOW}px ${SHADOW}px 0 ${accent.mint}` },
+    disabled: { borderStyle: 'dashed', background: 'transparent', color: surface.mutedForeground },
+  },
+} as const;
+
+/** Message under a field. Error and success always carry an icon. */
+export const fieldHint = {
+  fontSize: fontSize.sm,
+  color: surface.mutedForeground,
+  /** Error/success text goes back to ink; the icon square carries the color */
+  icon: { size: 17, borderWidth: borderWidth.thin, borderRadius: radii.xs },
+  variants: {
+    error: { color: ink, iconBackground: accent.red },
+    success: { color: ink, iconBackground: accent.mint },
+  },
+  /** Line/character counter; over the limit it turns into a red-soft tag */
+  counter: { fontSize: 11, over: { background: accent.redSoft, color: ink } },
 } as const;
 
 // ── Card & Window ──────────────────────────────────────────────
@@ -194,4 +214,133 @@ export const segmented = {
   borderRadius: radii.base,
   selectedBackground: accent.yellow,
   fontSize: 10.5,
+} as const;
+
+// ── Feedback ───────────────────────────────────────────────────
+
+/** Short confirmation. Auto-dismisses; error toasts use role="alert". */
+export const toast = {
+  background: surface.card,
+  border: borderStyle.solid,
+  borderRadius: radii.base,
+  boxShadow: shadowCSS.md,
+  maxWidth: 380,
+  iconBox: 34,
+  /** Above the tab bar, centered */
+  placement: 'bottom',
+  duration: 4000,
+  enter: { duration: 180, easing: 'ease-out', offsetY: 10 },
+  exit: { duration: 160, easing: 'ease-in' },
+  /** Action is an underlined link: "Ver", "Desfazer", "Tentar de novo" */
+  action: { fontWeight: fontWeight.bold, underline: primary[400] },
+  variants: {
+    success: { iconBackground: accent.mint },
+    error: { iconBackground: accent.red },
+    info: { iconBackground: accent.yellow },
+  },
+} as const;
+
+/** Persistent message at the top of the screen; stays until the problem is solved */
+export const banner = {
+  border: borderStyle.solid,
+  borderRadius: radii.base,
+  padding: spacing[3],
+  variants: {
+    /** Offline: yellow with a hazard stripe on the left edge */
+    offline: {
+      background: accent.yellow,
+      hazard: { width: 12, css: `repeating-linear-gradient(-45deg, ${ink} 0 5px, ${accent.yellow} 5px 10px)` },
+    },
+    info: { background: blue[100] },
+    error: { background: accent.redSoft },
+  },
+} as const;
+
+/** Only for what can't be undone. Says what is lost. */
+export const dialog = {
+  maxWidth: 330,
+  boxShadow: shadowCSS.md,
+  barBackground: { destructive: accent.red, default: primary[100] },
+  scrim: { color: ink, opacity: transition.scrim.opacity },
+  /** Cancel (neutral) on the left, the action on the right */
+  actions: { gap: spacing[2.5] },
+} as const;
+
+export const notification = {
+  iconBox: 38,
+  /** Unread: coral dot on the right, row background unchanged */
+  unreadDot: { size: 10, background: coral[400], border: `1.5px solid ${ink}` },
+  read: { color: surface.mutedForeground },
+  groupHeader: { background: paper.peach },
+  divider: borderStyle.divider,
+  /** Bell counter */
+  count: { size: 22, background: coral[400], fontSize: 10.5 },
+} as const;
+
+// ── Loading ────────────────────────────────────────────────────
+
+/** Brand loader: three bouncing squares in the stripe colors */
+export const loader = {
+  colors: stripe.colors,
+  size: 12,
+  gap: 6,
+  bounce: 9,
+  duration: 900,
+  stagger: 120,
+} as const;
+
+/** Show the shape of what's coming, never a lone spinner on a list */
+export const skeleton = {
+  color: 'rgba(26, 28, 39, 0.1)',
+  borderRadius: radii.xs,
+  pulse: { duration: 1200, minOpacity: 0.45 },
+  container: { border: `${borderWidth.base}px dashed ${border.divider}` },
+} as const;
+
+/** Steps of a long task (essay correction) */
+export const steps = {
+  marker: { size: 22, borderRadius: radii.xs },
+  done: { background: accent.mint },
+  current: { background: accent.yellow, fontWeight: fontWeight.semibold },
+  next: { borderStyle: 'dashed', color: surface.mutedForeground },
+} as const;
+
+// ── Selection ──────────────────────────────────────────────────
+
+/** Checkbox and radio: checked = violet with a white mark */
+export const checkbox = {
+  size: 22,
+  border: borderStyle.solid,
+  borderRadius: radii.xs,
+  checked: { background: primary[400], mark: '#FFFFFF' },
+  disabled: { borderStyle: 'dashed', background: 'transparent', color: surface.mutedForeground },
+  /** Minimum touch area */
+  hitArea: 44,
+} as const;
+
+export const radio = {
+  ...checkbox,
+  borderRadius: radii.full,
+  /** Inner white dot when checked */
+  dot: 8,
+} as const;
+
+/** Square switch: ink knob when off, white knob on violet when on */
+export const toggle = {
+  track: { width: 50, height: 28, border: borderStyle.solid, borderRadius: radii.base, off: surface.card, on: primary[400] },
+  knob: { size: 16, inset: 4, borderRadius: radii.xs, off: ink, on: '#FFFFFF', travel: 22 },
+  duration: 120,
+  hitArea: 44,
+} as const;
+
+/** Explains, never hides an action */
+export const tooltip = {
+  background: ink,
+  color: '#FFFFFF',
+  borderRadius: radii.xs,
+  paddingHorizontal: 9,
+  paddingVertical: 6,
+  fontSize: 12.5,
+  arrow: 8,
+  offset: 10,
 } as const;

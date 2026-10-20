@@ -43,7 +43,7 @@ O vermelho fica no limite do AA (4,50:1). Use-o em botões e avisos com texto de
 
 ### Tons claros
 
-O tom 100 de cada paleta é o fundo suave: `primary[100]` `#E4D8FD`, `blue[100]` `#D4E1FD` e `coral[100]` `#FFDCD7`. O verde suave é `accent.mintSoft` `#CFF3DA`. Esses tons aparecem em barras de janela, opções marcadas, tags e avisos.
+O tom 100 de cada paleta é o fundo suave: `primary[100]` `#E4D8FD`, `blue[100]` `#D4E1FD` e `coral[100]` `#FFDCD7`. O verde suave é `accent.mintSoft` `#CFF3DA` e o vermelho suave, para banners de erro e contadores estourados, é `accent.redSoft` `#FDE2E2`. Esses tons aparecem em barras de janela, opções marcadas, tags e avisos.
 
 ### Critérios
 
@@ -125,6 +125,63 @@ Os tokens de componente ficam em [`tokens/components.ts`](tokens/components.ts).
 - **Aviso:** amarelo (info), verde claro (sucesso) ou coral claro (erro), sempre com ícone.
 - **Barra de abas:** a aba ativa fica sobre um traço de marca-texto. O FAB é violeta, com ícone branco.
 - **Segmentado:** o segmento escolhido fica com fundo marca-texto.
+
+---
+
+## Feedback e estados
+
+Os tokens ficam em [`tokens/components.ts`](tokens/components.ts), e os exemplos vivos estão na seção "Feedback e estados" do site.
+
+### Regra de ouro
+
+**Erro nunca é só cor.** Todo erro tem ícone e uma frase que diz o que fazer ("Faltou um número. O código tem 5 dígitos depois do traço."), não só o que deu errado. O texto continua em tinta; quem carrega a cor é o quadradinho do ícone.
+
+### Validação de campo (`input.states`, `fieldHint`)
+
+- A borda de tinta não muda. **A sombra muda de cor:** vermelha no erro, verde no acerto e violeta no foco.
+- O campo desabilitado fica tracejado, com fundo transparente e texto grafite.
+- Contadores de linhas ou caracteres ficam em mono pequeno. Passou do limite, o contador vira uma tag vermelho suave.
+- Valide quando o campo perde o foco ou no envio, nunca a cada tecla.
+
+### Qual aviso usar
+
+| Situação | Componente | Some sozinho? |
+|---|---|---|
+| Confirmação de uma ação ("Salvo no caderno") | **Toast** (`toast`) | Sim, em 4s. Tem ação opcional ("Desfazer"). |
+| Falha de uma ação que dá para repetir | **Toast de erro** | Sim. A ação é "Tentar de novo" e usa `role="alert"`. |
+| Estado que continua até ser resolvido (sem conexão, plano acabando, correção falhou) | **Banner** (`banner`), no topo da tela | Não |
+| Ação que não tem volta (excluir redação, sair da turma) | **Diálogo** (`dialog`) | Não. Exige escolha. |
+| Explicação de um termo ou número | **Tooltip** (`tooltip`) | Ao tirar o foco |
+
+- **Toast:** cartão com ícone colorido e sombra de 4px. Fica acima da barra de abas, um de cada vez.
+- **Banner de sem conexão:** amarelo, com a faixa listrada de obra na borda esquerda. Diz o que continua funcionando ("Você pode escrever; a gente envia quando a internet voltar").
+- **Diálogo:** a barra fica vermelha quando a ação é destrutiva. O texto diz o que se perde ("A nota 6.8 e os 7 comentários somem junto"). Cancelar fica à esquerda e a ação à direita, com um verbo ("Excluir", não "Sim"). O fundo escurece com tinta a 45%.
+- **Tooltip:** só explica. Nunca esconda uma ação dentro dele.
+
+### Notificações (`notification`)
+
+- Agrupadas por período ("Hoje", "Esta semana").
+- A nova tem uma **bolinha coral** à direita. O fundo da linha não muda.
+- A lida fica com o texto grafite.
+- O ícone indica o tipo:
+  - correção pronta: menta;
+  - comentário do professor: violeta claro;
+  - sequência: coral claro;
+  - conquista: cor do nível.
+- O sino mostra um contador coral.
+
+### Carregando (`loader`, `skeleton`, `steps`)
+
+- **Até 1s:** nada.
+- **Espera curta:** o loader da marca, três quadrados azul, violeta e coral pulando.
+- **Lista ou cartão:** skeleton com a forma do conteúdo, num contêiner tracejado.
+- **Tarefa longa, como a correção:** etapas. A concluída fica verde com check, a atual amarela e a próxima tracejada. Mostre o tempo estimado.
+
+### Seleção (`checkbox`, `radio`, `toggle`)
+
+- **Marcado é violeta com marca branca.** O checkbox tem estado indeterminado, com um traço branco.
+- **Switch quadrado:** pino de tinta quando desligado; trilho violeta com pino branco quando ligado. Use para o que vale na hora, como um lembrete. Para o que precisa ser salvo, use checkbox.
+- **Área de toque:** mínima de 44px, mesmo quando o controle desenhado tem 22px.
 
 ---
 
