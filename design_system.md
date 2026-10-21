@@ -128,6 +128,8 @@ A Instrument Serif nunca vai em botões nem em formulários. O `fontImport` traz
 | foco e erro de campo | cor |
 | barra, medidor e número contando | encher |
 | nota pronta, conquista, sequência +1, semana fechada | quique (uma vez) |
+| veredito do treino | entrar, vindo de baixo |
+| fim do treino | encher (troféu e número) + quique (confete, adesivo e selo, a cada 80ms) |
 | mascote espiando | quique |
 | pilha de telas | transição nativa |
 | teclado | duração do sistema |
@@ -155,6 +157,18 @@ Os tokens de componente ficam em [`tokens/components.ts`](tokens/components.ts).
 - **Aviso:** amarelo (info), verde claro (sucesso) ou coral claro (erro), sempre com ícone.
 - **Barra de abas:** a aba ativa fica sobre um traço de marca-texto. O FAB é violeta, com ícone branco.
 - **Segmentado:** o segmento escolhido fica com fundo marca-texto.
+
+
+### Treino
+
+Os tokens ficam em [`tokens/components.ts`](tokens/components.ts) (seção Practice), e os exemplos vivos estão na seção "Treino" do site.
+
+- **Passos (`pips`):** quadradinhos de tinta. Contam as rodadas da sessão (5; a atual fica amarela) e mostram a faixa de maestria (4: Começando, Em evolução, Consistente, Dominado). Maestria é faixa, nunca porcentagem. A habilidade dominada em revisão espaçada ganha a tag azul "Revisão".
+- **Opção de resposta (`answer`):** a Opção de sempre, com os estados da correção. Certa fica verde claro com check; errada, vermelho claro com x; as que não entram na correção ficam tracejadas e em grafite. O ícone vai junto da cor.
+- **Bloco arrastável (`dragItem`):** o número fica numa célula de papel e a alça à direita. Levantado, o bloco ganha sombra de 4px e inclina 1,5°, e segue o dedo sem transição. No teclado, as setas movem o bloco em foco. Na correção, o número fica verde e o bloco diz o seu papel.
+- **Lacuna (`blank`):** traço de tinta na frase. Preenchida, vira marca-texto.
+- **Veredito (`verdict`):** painel no rodapé depois de conferir, com ícone, título, XP e o porquê, e um botão só. Verde claro no acerto, vermelho claro no erro e violeta claro na avaliação da IA, que é parcial e nunca fica verde nem vermelha.
+- **Troféu (`trophy`):** quadrado que enche de amarelo até a precisão da sessão.
 
 ---
 

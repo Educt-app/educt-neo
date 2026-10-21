@@ -83,4 +83,10 @@ export {
   upload,
   password,
   correction,
+  pips,
+  answer,
+  dragItem,
+  blank,
+  verdict,
+  trophy,
 } from './components';

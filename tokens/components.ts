@@ -434,3 +434,71 @@ export const correction = {
   /** Squares hop one after the other when done */
   hop: { ...transition.bounce, distance, stagger: duration.press },
 } as const;
+
+// ── Practice (Treinar) ─────────────────────────────────────────
+
+/**
+ * Pips: a count in squares. Rounds of a session (5, current one yellow)
+ * and mastery bands (4: Começando, Em evolução, Consistente, Dominado).
+ * Mastery is a band, never a percentage.
+ */
+export const pips = {
+  size: { width: 10, height: 8 },
+  gap: 3,
+  border: `${borderWidth.thin}px solid ${ink}`,
+  borderRadius: 1,
+  off: surface.card,
+  on: primary[400],
+  current: accent.yellow,
+  masteryBands: ['Começando', 'Em evolução', 'Consistente', 'Dominado'],
+  /** Mastered skills go to spaced review: shown as a tag next to the band */
+  review: { tag: blue[100] },
+} as const;
+
+/** Answer option: the selectable option gets correction states. Error is never color alone. */
+export const answer = {
+  selected: { background: primary[100] },
+  right: { background: accent.mintSoft, mark: accent.mint, icon: 'check' },
+  wrong: { background: accent.redSoft, mark: accent.red, icon: 'x' },
+  /** The options not involved after checking */
+  idle: { borderStyle: 'dashed', boxShadow: 'none', color: surface.mutedForeground },
+  change: transition.color,
+} as const;
+
+/** Block to drag into order. Keyboard: arrows move the focused block. */
+export const dragItem = {
+  number: { width: 36, background: paper.peach, borderRight: borderStyle.solid },
+  handle: { color: surface.mutedForeground },
+  /** Lifted: 4px shadow and a slight tilt; follows the finger with no transition */
+  lifted: { boxShadow: shadowCSS.md, rotate: -1.5 },
+  right: { numberBackground: accent.mint },
+} as const;
+
+/** Blank in a sentence: ink underline; filled, it becomes a highlighter */
+export const blank = {
+  minWidth: 72,
+  underline: `${borderWidth.base}px solid ${ink}`,
+  filled: { background: accent.yellow, border: `${borderWidth.thin}px solid ${ink}`, borderRadius: radii.xs },
+} as const;
+
+/**
+ * Verdict: panel at the bottom after checking. Icon + title + XP + the why + one button.
+ * AI feedback is partial: violet, never green or red.
+ */
+export const verdict = {
+  variants: {
+    right: { background: accent.mintSoft, icon: accent.mint },
+    wrong: { background: accent.redSoft, icon: accent.red },
+    partial: { background: primary[100], icon: primary[400] },
+  },
+  xpTag: accent.yellow,
+  enter: transition.enter,
+} as const;
+
+/** End of session: the trophy fills with yellow up to the accuracy; confetti and badge bounce once */
+export const trophy = {
+  size: 132,
+  fill: { color: accent.yellow, ...transition.fill },
+  confetti: { colors: [blue[400], primary[400], coral[400], accent.yellow, accent.mint], ...transition.bounce, stagger: duration.press },
+  badgePop: transition.bounce,
+} as const;

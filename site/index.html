@@ -762,6 +762,68 @@ footer{padding-block:48px 64px;color:var(--muted);font-size:13px}
 section[id]{scroll-margin-top:130px}
 .sw[role=button]{cursor:pointer}
 .sw[role=button]:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+/* ───────── treino ───────── */
+/* passos: rodadas (5, a atual amarela) e faixa de maestria (4) */
+.pips{display:inline-flex;gap:3px;flex:none}
+.pips i{width:10px;height:8px;border:1.5px solid var(--ink);border-radius:1px;background:var(--card)}
+.pips i.on{background:var(--c,var(--violet))}
+.pips i.now{background:var(--yellow)}
+.pips.full{display:flex;width:100%}
+.pips.full i{flex:1;height:10px}
+/* faixa de maestria numa linha de lista */
+.band{flex:none;min-width:78px;text-align:right;font:600 11.5px/1.2 var(--f-body);color:var(--muted)}
+.band b{color:var(--ink);font-weight:600}
+/* chip com input (escolha única ou várias) */
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;margin:0;pointer-events:none}
+.chip:has(input:checked){background:var(--blue-soft)}
+.chip:has(input:focus-visible){outline:3px solid var(--blue);outline-offset:3px}
+.chip{transition:background-color var(--dur-color) var(--ease-out)}
+/* opção de resposta: estados da correção */
+.opt.txt{align-items:flex-start;font-weight:400;font-size:14.5px;line-height:1.45}
+.opt.txt .tick{margin-top:1px;flex:none}
+.opt .tick .i{color:var(--on-violet)}
+.opt.is-right,.opt.is-wrong{cursor:default;transform:none;box-shadow:var(--sh) var(--sh) 0 var(--ink)}
+.opt.is-right{background:var(--mint-soft)}
+.opt.is-right .tick{background:var(--mint)}
+.opt.is-wrong{background:var(--red-soft)}
+.opt.is-wrong .tick{background:var(--red)}
+.opt.is-right .tick .i,.opt.is-wrong .tick .i{opacity:1;color:var(--ink)}
+.opt.is-idle{border-style:dashed;box-shadow:none;background:transparent;color:var(--muted);cursor:default}
+.opt.is-idle .tick{border-style:dashed}
+.opt-v{display:flex;flex-direction:column;gap:6px;min-width:0}
+.opt-v .label{color:var(--muted)}
+.opt-why{font-size:13px;color:var(--ink)}
+/* bloco arrastável */
+.drags{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.drag{position:relative;display:flex;align-items:stretch;background:var(--card);border:var(--bw) solid var(--ink);border-radius:var(--r-ctl);box-shadow:var(--sh) var(--sh) 0 var(--ink);font-size:14px;line-height:1.45;touch-action:none;user-select:none;cursor:grab;transition:box-shadow var(--dur-press) var(--ease-out),transform var(--dur-press) var(--ease-out)}
+.drag .n{width:36px;flex:none;display:grid;place-items:center;border-right:var(--bw) solid var(--ink);background:var(--paper);font:700 12px/1 var(--f-label);transition:background-color var(--dur-color) var(--ease-out)}
+.drag p{flex:1;min-width:0;padding:10px 12px}
+.drag .grip{display:grid;place-items:center;padding:0 10px 0 0;color:var(--muted)}
+.drag:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.drag.lifted{z-index:2;cursor:grabbing;box-shadow:4px 4px 0 var(--ink);transition:none}
+.drag.is-right{cursor:default;touch-action:auto}
+.drag.is-right .n{background:var(--mint)}
+.drag small{display:block;margin-top:4px;font-size:12.5px;color:var(--muted)}
+/* lacuna */
+.blank{display:inline-block;min-width:72px;padding:0 6px;border-bottom:var(--bw) solid var(--ink);text-align:center;font-weight:600;line-height:1.3}
+.blank.filled{background:var(--yellow);border:1.5px solid var(--ink);border-radius:var(--r-tag)}
+/* veredito: painel do rodapé depois de conferir */
+.verdict{background:var(--c,var(--mint-soft));animation:rv-in var(--dur-enter) var(--ease-out)}
+.verdict-h{display:flex;align-items:center;gap:8px;font:var(--w-display) 20px/1 var(--f-display)}
+.verdict-h .tag{margin-left:auto}
+.verdict p{font-size:14px;line-height:1.45}
+.verdict .mini-ic{width:24px;height:24px}
+.verdict .mini-ic .i{width:14px;height:14px}
+/* troféu que enche */
+.trophy{position:relative;width:132px;height:132px;display:grid;place-items:center;border:var(--bw) solid var(--ink);border-radius:var(--r-card);background:var(--card);box-shadow:4px 4px 0 var(--ink);overflow:hidden}
+.trophy::before{content:"";position:absolute;left:0;right:0;bottom:0;height:var(--p,0%);background:var(--yellow);border-top:var(--bw) solid var(--ink);transition:height var(--dur-fill) var(--ease-out)}
+.trophy .i{position:relative;width:56px;height:56px;stroke-width:1.8}
+.confetti{position:absolute;inset:0;pointer-events:none}
+.confetti i{position:absolute;width:10px;height:14px;border:1.5px solid var(--ink);border-radius:1px;background:var(--c);opacity:0}
+.play .confetti i{animation:pop var(--dur-bounce) var(--ease-bounce) both}
+.play .pop-in{animation:pop var(--dur-bounce) var(--ease-bounce) both}
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
 </style>
 
@@ -825,6 +887,7 @@ section[id]{scroll-margin-top:130px}
   <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></symbol>
   <symbol id="i-eye-off" viewBox="0 0 24 24"><path d="M9.9 4.2A10 10 0 0 1 12 4c6.4 0 10 8 10 8a17 17 0 0 1-2.2 3.2M6.6 6.6A17 17 0 0 0 2 12s3.6 8 10 8a9.7 9.7 0 0 0 5.4-1.6"/><path d="M9.9 9.9a3 3 0 0 0 4.2 4.2M2 2l20 20"/></symbol>
   <symbol id="i-more" viewBox="0 0 24 24"><circle cx="12" cy="5" r="1"/><circle cx="12" cy="12" r="1"/><circle cx="12" cy="19" r="1"/></symbol>
+  <symbol id="i-grip" viewBox="0 0 24 24"><circle cx="9" cy="6" r="1"/><circle cx="15" cy="6" r="1"/><circle cx="9" cy="12" r="1"/><circle cx="15" cy="12" r="1"/><circle cx="9" cy="18" r="1"/><circle cx="15" cy="18" r="1"/></symbol>
   <symbol id="i-cap" viewBox="0 0 24 24"><path d="M22 10 12 5 2 10l10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
 </svg>
 
@@ -843,7 +906,7 @@ section[id]{scroll-margin-top:130px}
     </div>
   </div>
     <nav class="toc" aria-label="Seções">
-      <a href="#telas">Telas</a><a href="#tokens">Tokens</a><a href="#componentes">Componentes</a><a href="#feedback">Feedback e estados</a><a href="#formularios">Formulários</a><a href="#regras">Regras</a><a href="#logo">Marca</a><a href="https://github.com/Educt-app/educt-neo" target="_blank" rel="noopener">Repo ↗</a>
+      <a href="#telas">Telas</a><a href="#tokens">Tokens</a><a href="#componentes">Componentes</a><a href="#treino">Treino</a><a href="#feedback">Feedback e estados</a><a href="#formularios">Formulários</a><a href="#regras">Regras</a><a href="#logo">Marca</a><a href="https://github.com/Educt-app/educt-neo" target="_blank" rel="noopener">Repo ↗</a>
     </nav>
 </header>
 
@@ -1428,6 +1491,58 @@ section[id]{scroll-margin-top:130px}
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <section class="sec" id="treino" aria-labelledby="tr-h">
+    <div class="sec-head">
+      <h2 id="tr-h">Treino</h2>
+      <p>Os componentes da ferramenta de treinos: rodadas, maestria, resposta, bloco, lacuna, veredito e troféu.</p>
+    </div>
+    <div class="specs">
+      <div class="spec">
+        <div class="spec-h"><span class="label">Passos · rodadas e maestria</span><span class="label">faixa, nunca %</span></div>
+        <div class="spec-b">
+          <div class="round" style="display:flex;flex-direction:column;gap:8px"><span class="label">Rodada 3 de 5</span><span class="pips full" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="now"></i><i></i><i></i></span></div>
+          <div class="list">
+            <div class="listrow"><span class="listrow-t">Começando</span><span class="pips" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i></span></div>
+            <div class="listrow"><span class="listrow-t">Em evolução</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i></i><i></i></span></div>
+            <div class="listrow"><span class="listrow-t">Consistente</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i></i></span></div>
+            <div class="listrow"><span class="listrow-t">Dominado</span><span class="tag tag-blue">Revisão</span><span class="pips" aria-hidden="true"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="spec">
+        <div class="spec-h"><span class="label">Opção de resposta</span><span class="label">escolhida · certa · errada · fora</span></div>
+        <div class="spec-b">
+          <div class="opts">
+            <label class="opt"><input type="radio" name="tr-ans" checked>Escolhida<span class="tick"><svg class="i i-sm"><use href="#i-check"/></svg></span></label>
+            <div class="opt is-right">Certa<span class="tick"><svg class="i i-sm"><use href="#i-check"/></svg></span></div>
+            <div class="opt is-wrong">Errada<span class="tick"><svg class="i i-sm"><use href="#i-x"/></svg></span></div>
+            <div class="opt is-idle">Fora da correção<span class="tick"></span></div>
+          </div>
+        </div>
+      </div>
+      <div class="spec">
+        <div class="spec-h"><span class="label">Bloco arrastável · lacuna</span><span class="label">dedo ou setas</span></div>
+        <div class="spec-b">
+          <ol class="drags">
+            <li class="drag" tabindex="0"><span class="n">1</span><p>Bloco parado</p><span class="grip"><svg class="i i-sm"><use href="#i-grip"/></svg></span></li>
+            <li class="drag lifted" style="transform:rotate(-1.5deg)"><span class="n">2</span><p>Bloco levantado</p><span class="grip"><svg class="i i-sm"><use href="#i-grip"/></svg></span></li>
+            <li class="drag is-right"><span class="n">3</span><p>Bloco na posição certa<small>O porquê da posição</small></p></li>
+          </ol>
+          <p style="font-size:15px;line-height:1.9">Lacuna vazia <span class="blank">&nbsp;</span> e preenchida <span class="blank filled">portanto</span>.</p>
+        </div>
+      </div>
+      <div class="spec">
+        <div class="spec-h"><span class="label">Veredito · troféu</span><span class="label">entrar · encher · quique</span></div>
+        <div class="spec-b">
+          <div class="box verdict win-body" style="--c:var(--mint-soft);display:flex;flex-direction:column;gap:8px"><div class="verdict-h"><span class="mini-ic" style="--c:var(--mint)"><svg class="i"><use href="#i-check"/></svg></span>Correto<span class="tag tag-yellow tnum">+15 XP</span></div><p>Sempre com o porquê da resposta.</p></div>
+          <div class="box verdict win-body" style="--c:var(--red-soft);display:flex;flex-direction:column;gap:8px"><div class="verdict-h"><span class="mini-ic" style="--c:var(--red)"><svg class="i"><use href="#i-x"/></svg></span>Quase lá</div><p>Diz onde errou e qual era a certa.</p></div>
+          <div class="box verdict win-body" style="--c:var(--violet-soft);display:flex;flex-direction:column;gap:8px"><div class="verdict-h"><span class="mini-ic" style="--c:var(--violet);color:var(--on-violet)"><svg class="i"><use href="#i-check"/></svg></span>Avaliação parcial<span class="tag tag-yellow tnum">+12 XP</span></div><p>Correção da IA: violeta, sem verde nem vermelho.</p></div>
+          <div class="trophy" style="--p:80%;margin:4px auto 0" role="img" aria-label="Troféu cheio até 80%"><svg class="i"><use href="#i-trophy"/></svg></div>
+        </div>
+      </div>
     </div>
   </section>
 
